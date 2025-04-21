@@ -1,0 +1,1428 @@
+{
+  "id": "2380ab44-e4cb-466e-a92d-00ab5fd0e92b",
+  "type": "text",
+  "channel": "emulator",
+  "userId": "user-2",
+  "direction": "incoming",
+  "payload": {
+    "type": "text",
+    "text": "What is a contact"
+  },
+  "botId": "6a141421-9ba3-4787-8ee6-81f0012950d7",
+  "createdOn": "2025-04-21T14:01:05.647Z",
+  "conversationId": "convo-1",
+  "preview": "What is a contact",
+  "state": {
+    "__stacktrace": [
+      {
+        "flow": "flow:askForFeedback",
+        "node": "node:Entry"
+      },
+      {
+        "flow": "flow:askForFeedback",
+        "node": "node:Request_Feedback",
+        "card": "card:"
+      }
+    ],
+    "context": {
+      "currentFlow": "flow:askForFeedback",
+      "currentNode": "node:Request_Feedback",
+      "previousFlow": "flow:supportv3",
+      "previousNode": "node:Entry",
+      "previousCard": "-",
+      "jumpPoints": [
+        {
+          "flow": "flow:Main",
+          "node": "node:Main_Router",
+          "card": "card:skill"
+        },
+        {
+          "flow": "flow:mainRouter",
+          "node": "node:Support_Router",
+          "card": "card:skill"
+        },
+        {
+          "flow": "flow:supportRouter",
+          "node": "node:Get_Chat_Support",
+          "card": "card:skill"
+        },
+        {
+          "flow": "flow:supportv3",
+          "node": "node:Support_Agent",
+          "card": "card:autonomous"
+        }
+      ],
+      "currentCard": "card:Log Event Data to Console in JavaScript",
+      "queue": []
+    },
+    "session": {
+      "history": [
+        {
+          "id": "40ca434a-f33f-4f0a-98c9-e653a712bdb7",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:05.347Z",
+          "type": "text",
+          "preview": "Hey there ! \n\n\nMy name is Highly and I am HighLevel's experimental **AI Support Assistant**!",
+          "options": []
+        },
+        {
+          "id": "801b57d9-ab7b-4c31-83c3-1c224f9c84ea",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:05.581Z",
+          "type": "text",
+          "preview": "If at any time you'd like to speak to a Human Agent simply say *Agent* and I will transfer you to one.",
+          "options": []
+        },
+        {
+          "id": "f1a80f45-85f0-45ea-b260-add2b11fe971",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:06.563Z",
+          "type": "choice",
+          "preview": "Just pick a category below that best describes your request, and I’ll take it from there.",
+          "options": [
+            {
+              "label": "Affiliate Support",
+              "value": "Affiliate Support"
+            },
+            {
+              "label": "Billing Support",
+              "value": "Billing Support"
+            },
+            {
+              "label": "Technical Support",
+              "value": "Technical Support"
+            },
+            {
+              "label": "I'm Done!",
+              "value": "I'm Done!"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:38:09.659Z",
+          "preview": "Technical Support",
+          "type": "text"
+        },
+        {
+          "id": "c0e77bc0-fcc4-4bab-ac6f-943fee3631c2",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:10.279Z",
+          "type": "text",
+          "preview": "Awesome! I can definitely help you with support.",
+          "options": []
+        },
+        {
+          "id": "74bd8251-0e04-4e2d-b0f3-a87d057f6d05",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:10.539Z",
+          "type": "choice",
+          "preview": "What would you like to do?",
+          "options": [
+            {
+              "label": "Start Chat Support",
+              "value": "Start Chat Support"
+            },
+            {
+              "label": "Check an Existing Ticket",
+              "value": "Check an Existing Ticket"
+            },
+            {
+              "label": "Create a New Ticket",
+              "value": "Create a New Ticket"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:38:13.027Z",
+          "preview": "Start Chat Support",
+          "type": "text"
+        },
+        {
+          "id": "247c6689-ac09-414a-be01-3f7b374c7310",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:38:14.467Z",
+          "type": "text",
+          "preview": "Hello! 🙂 How can I help you today?",
+          "options": []
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:39:05.172Z",
+          "preview": "Where do I find workflows",
+          "type": "text"
+        },
+        {
+          "id": "cbf5b119-1060-4b67-8001-0c2148936413",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:39:07.962Z",
+          "type": "text",
+          "preview": "To find and manage workflows in HighLevel, follow these steps: \n \n1. **Go to the Automations tab** in your HighLevel dashboard. \n2. Click on **\"Workflows\"** to view all your existing workflows【0】【4】【11】. \n3. To create a new workflow, click the **\"+ Create Workflow\"** button and choose to start from scratch or use a template【4】【11】【23】【24】. \n \nYou can also use advanced filters and Smart Lists to organize and quickly access your workflows【0】. \n \nWould you like a step-by-step guide with screenshots, or do you have a specific workflow question? 🙂",
+          "options": []
+        },
+        {
+          "id": "b1d1fb57-2834-4f9f-a626-33082f8bac93",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:39:10.192Z",
+          "type": "choice",
+          "preview": "I'm still learning! Did this help?",
+          "options": [
+            {
+              "label": "👍",
+              "value": "👍"
+            },
+            {
+              "label": "👎",
+              "value": "👎"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:40:14.109Z",
+          "preview": "👍",
+          "type": "text"
+        },
+        {
+          "id": "c1f40e97-830a-42c4-91aa-e3f621b10b47",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:40:18.822Z",
+          "type": "choice",
+          "preview": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?",
+          "options": [
+            {
+              "label": "Ask another question",
+              "value": "Ask another question"
+            },
+            {
+              "label": "No, I'm all set",
+              "value": "No, I'm all set"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:41:32.710Z",
+          "preview": "Ask another question",
+          "type": "text"
+        },
+        {
+          "id": "04252862-c2ec-4a6c-a6e4-94ea17adeee7",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:41:36.309Z",
+          "type": "text",
+          "preview": "Of course! What would you like to ask next? 💡🤔",
+          "options": []
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:42:58.823Z",
+          "preview": "What is a workflow",
+          "type": "text"
+        },
+        {
+          "id": "beb596ff-63e1-4614-9a26-203edf4c27cc",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:43:12.321Z",
+          "type": "text",
+          "preview": "A **workflow** in HighLevel is a series of automated steps that handle tasks and communications based on specific triggers—like when a contact fills out a form or joins your community. Workflows save you time by running these actions automatically, such as sending emails, updating records, or notifying your team, so you don’t have to do them manually【0】【1】【2】. \n \nEach workflow has two main parts: \n- **Triggers:** What starts the workflow (like a form submission or a new contact). \n- **Actions:** The tasks that happen automatically (like sending emails or updating CRM data)【1】【2】【23】. \n \nWould you like to see examples of common workflows or learn how to create one? 🙂",
+          "options": []
+        },
+        {
+          "id": "a777b3c3-a2e3-482c-abea-1a1017e24dfb",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:43:14.528Z",
+          "type": "choice",
+          "preview": "I'm still learning! Did this help?",
+          "options": [
+            {
+              "label": "👍",
+              "value": "👍"
+            },
+            {
+              "label": "👎",
+              "value": "👎"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:44:01.878Z",
+          "preview": "👍",
+          "type": "text"
+        },
+        {
+          "id": "9b9b98f3-6d85-4074-8258-6cdf0b5baa85",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:44:06.220Z",
+          "type": "text",
+          "preview": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?",
+          "options": []
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:46:19.220Z",
+          "preview": "Yes what are smart lists",
+          "type": "text"
+        },
+        {
+          "id": "fe5f99d4-f754-4b41-b89c-16fe468723d0",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:46:31.187Z",
+          "type": "text",
+          "preview": "A **Smart List** in HighLevel is a dynamic contact list that updates automatically based on filters and conditions you set—like tags, custom fields, or engagement activity. Unlike static lists, Smart Lists adjust in real time as contact data changes, helping you segment, organize, and target contacts efficiently without manual updates【1】【2】【8】【10】. \n \nYou can find Smart Lists under **Subaccount → Contacts tab → Smartlists**. They’re great for automating segmentation, powering workflows, and keeping your CRM organized【1】【5】【8】. \n \nWould you like to see how to create or manage a Smart List? 🙂",
+          "options": []
+        },
+        {
+          "id": "03e4357f-9a3f-4e31-b726-c88bc7279612",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:46:33.858Z",
+          "type": "choice",
+          "preview": "I'm still learning! Did this help?",
+          "options": [
+            {
+              "label": "👍",
+              "value": "👍"
+            },
+            {
+              "label": "👎",
+              "value": "👎"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:46:55.678Z",
+          "preview": "👍",
+          "type": "text"
+        },
+        {
+          "id": "ddffceec-2d89-4fa8-9387-8c1011ae6657",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:46:59.458Z",
+          "type": "text",
+          "preview": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding Smart Lists or any other HighLevel feature?",
+          "options": []
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:47:36.983Z",
+          "preview": "What is a pipeline and where do I create one",
+          "type": "text"
+        },
+        {
+          "id": "a0fc297a-0795-496b-a59c-c8be89416225",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:47:52.671Z",
+          "type": "text",
+          "preview": "A **pipeline** in HighLevel is a visual tool that helps you organize and automate your sales or business processes by moving opportunities (like leads or deals) through different stages—such as \"Lead Capture,\" \"Qualification,\" \"Follow-up,\" and \"Closing\"【1】【5】【21】. \n \n**To find and create a pipeline:** \n1. Go to your **Subaccount**. \n2. Click on **Opportunities** from the left sidebar. \n3. Select **Pipelines** from the top menu. \n4. Click the **\"Create Pipeline\"** button and give it a unique, descriptive name. \n5. Add stages to your pipeline to match your sales or workflow process. You can reorder stages and \"Won\"/\"Lost\" stages are created by default【0】【3】【21】【23】. \n \nPipelines help automate tasks, keep your team organized, and ensure consistent engagement with your contacts【4】【5】【21】. \n \nWould you like a step-by-step guide with images, or do you have a specific question about pipelines? 🙂",
+          "options": []
+        },
+        {
+          "id": "5b8d26ee-f6dc-4a3c-9a46-3645ad46f69d",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:47:55.593Z",
+          "type": "choice",
+          "preview": "I'm still learning! Did this help?",
+          "options": [
+            {
+              "label": "👍",
+              "value": "👍"
+            },
+            {
+              "label": "👎",
+              "value": "👎"
+            }
+          ]
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T13:53:51.333Z",
+          "preview": "👍",
+          "type": "text"
+        },
+        {
+          "id": "ec74304c-fef2-4d93-b707-59727c96bb5b",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T13:53:56.245Z",
+          "type": "text",
+          "preview": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding pipelines or any other HighLevel feature?",
+          "options": []
+        },
+        {
+          "id": "none",
+          "sender": "user",
+          "date": "2025-04-21T14:01:05.923Z",
+          "preview": "What is a contact",
+          "type": "text"
+        },
+        {
+          "id": "caac8fae-9b23-4e42-aeb5-9abf3d73b000",
+          "sender": "bot",
+          "confidence": 1,
+          "date": "2025-04-21T14:13:48.297Z",
+          "type": "text",
+          "preview": "A **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】. \n \nWould you like to learn how to add, manage, or segment contacts in HighLevel? 🙂",
+          "options": []
+        }
+      ],
+      "workflows_executions": [
+        {
+          "execution_id": "d5be3594-9327-49f3-94c9-7963ac1c6f2f",
+          "caller": {
+            "type": "entry"
+          },
+          "started_at": "2025-04-21T13:37:59.961Z",
+          "variable_values": {
+            "userData": {},
+            "correctLanguage": false,
+            "language": {
+              "EXIT": "Exit"
+            },
+            "hipaaCheck": {
+              "EXIT": "Exit"
+            },
+            "urgentMessage": {
+              "EXIT": "Exit"
+            }
+          },
+          "workflow_id": "flow:Main"
+        },
+        {
+          "workflow_id": "flow:mainRouter",
+          "variable_values": {
+            "router": "Technical Support"
+          },
+          "caller": {
+            "type": "workflow",
+            "execution_id": "d5be3594-9327-49f3-94c9-7963ac1c6f2f",
+            "card_id": "card:skill",
+            "node_id": "node:Main_Router"
+          },
+          "execution_id": "0f39b8fb-4710-479e-a633-71692a8f32a3",
+          "started_at": "2025-04-21T13:38:06.066Z"
+        },
+        {
+          "workflow_id": "flow:supportRouter",
+          "variable_values": {},
+          "caller": {
+            "type": "workflow",
+            "execution_id": "0f39b8fb-4710-479e-a633-71692a8f32a3",
+            "card_id": "card:skill",
+            "node_id": "node:Support_Router"
+          },
+          "execution_id": "b6756471-8e88-44c2-9581-6cc6ebe1b396",
+          "started_at": "2025-04-21T13:38:09.868Z"
+        },
+        {
+          "workflow_id": "flow:supportv3",
+          "variable_values": {
+            "sentiment": "neutral",
+            "confidence": 1,
+            "clarification_reason": "",
+            "escalation_trigger": "",
+            "attempts_before_success": "",
+            "clarification_count": 0,
+            "feedback": {}
+          },
+          "caller": {
+            "type": "workflow",
+            "execution_id": "b6756471-8e88-44c2-9581-6cc6ebe1b396",
+            "card_id": "card:skill",
+            "node_id": "node:Get_Chat_Support"
+          },
+          "execution_id": "b8eced1a-a27c-498e-8747-c0c8378f63d3",
+          "started_at": "2025-04-21T13:38:13.282Z"
+        },
+        {
+          "workflow_id": "flow:askForFeedback",
+          "variable_values": {
+            "sentiment": "neutral",
+            "confidence": 1,
+            "transcript": "",
+            "feedback": {}
+          },
+          "caller": {
+            "type": "workflow",
+            "execution_id": "b8eced1a-a27c-498e-8747-c0c8378f63d3",
+            "card_id": "card:autonomous",
+            "node_id": "node:Support_Agent"
+          },
+          "execution_id": "951ac60c-d15c-4835-aabb-90c9b080a698",
+          "started_at": "2025-04-21T14:13:50.765Z"
+        }
+      ],
+      "id": "convo-1",
+      "current_execution_id": "951ac60c-d15c-4835-aabb-90c9b080a698",
+      "current_workflow": {
+        "workflow_id": "flow:askForFeedback",
+        "variable_values": {
+          "sentiment": "neutral",
+          "confidence": 1,
+          "transcript": "",
+          "feedback": {}
+        },
+        "caller": {
+          "type": "workflow",
+          "execution_id": "b8eced1a-a27c-498e-8747-c0c8378f63d3",
+          "card_id": "card:autonomous",
+          "node_id": "node:Support_Agent"
+        },
+        "execution_id": "951ac60c-d15c-4835-aabb-90c9b080a698",
+        "started_at": "2025-04-21T14:13:50.765Z"
+      },
+      "prompt-node:Support_Agent_b8eced1a-a27c-498e-8747-c0c8378f63d3": {
+        "id": "autonomous_01JSC948259N7A8BV8E98473S4",
+        "started_ts": 1745242693701,
+        "nodeId": "node:Support_Agent",
+        "retries_count": 0,
+        "variable_values": {},
+        "allow_switching_capability": true,
+        "queued_workflows": [
+          {
+            "execution_id": "exec_01JSCB5D0GF1W5PWG12Q29EKM7",
+            "card_id": "card:autonomous",
+            "args": {
+              "sentiment": "neutral",
+              "confidence": 1,
+              "aiAnswer": "",
+              "question": ""
+            },
+            "status": "executing",
+            "workflow_id": "flow:askForFeedback",
+            "started_ts": 1745244830764
+          }
+        ],
+        "snapshot": {
+          "id": "snapshot_01JSCB5EH7D8ER0D95M01D13VT",
+          "signalType": "ExecuteSignal",
+          "variables": [],
+          "callbacks": [
+            {
+              "type": "resolve",
+              "description": "Execution of tool \"askForFeedback\" succeeded",
+              "success": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "x-zui": {}
+                  },
+                  "output": {
+                    "type": "object",
+                    "properties": {
+                      "feedback": {
+                        "x-zui": {},
+                        "default": {}
+                      },
+                      "EXIT": {
+                        "type": "string",
+                        "enum": [
+                          "Exit"
+                        ],
+                        "x-zui": {}
+                      }
+                    },
+                    "required": [
+                      "EXIT"
+                    ],
+                    "additionalProperties": false,
+                    "x-zui": {}
+                  }
+                },
+                "required": [
+                  "output"
+                ],
+                "additionalProperties": false,
+                "x-zui": {},
+                "description": "The output of the workflow execution"
+              },
+              "assignment": {
+                "type": "single",
+                "left": "feedback",
+                "evalFn": "let feedback = arguments[0]; return { feedback };"
+              }
+            },
+            {
+              "type": "reject",
+              "description": "Execution of tool \"askForFeedback\" failed",
+              "success": false
+            }
+          ],
+          "notebook": [
+            {
+              "type": "code",
+              "content": "// Provide a clear, sourced definition of a \"contact\" in HighLevel with citation and ask for feedback.\nyield <Message>\nA **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】.\n\nWould you like to learn how to add, manage, or segment contacts in HighLevel? 🙂\n</Message>\nawait plusmixpanel.trackEvent({\n  userId: \"\",\n  eventName: \"ai_answer\",\n  eventPayload: \"convo-1\"\n})\nconst feedback = await askForFeedback({\n  sentiment: \"neutral\",\n  confidence: 1,\n  aiAnswer: \"A contact in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data.\",\n  question: \"What is a contact\"\n})\nreturn { action: 'think', feedback }"
+            }
+          ],
+          "stack": "  001 | // Provide a clear, sourced definition of a \"contact\" in HighLevel with citation and ask for feedback.\n  002 | yield <Message>\n  003 | A **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】.\n  004 | \n  005 | Would you like to learn how to add, manage, or segment contacts in HighLevel? 🙂\n  006 | </Message>\n  007 | await plusmixpanel.trackEvent({\n  008 |   userId: \"\",\n  009 |   eventName: \"ai_answer\",\n  010 |   eventPayload: \"convo-1\"\n  011 | })\n> 012 | const feedback = await askForFeedback({\n                        ^^^^^^^^^^\n  013 |   sentiment: \"neutral\",\n  014 |   confidence: 1,\n  015 |   aiAnswer: \"A contact in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data.\",\n  016 |   question: \"What is a contact\"\n> 017 | })\n       ^^^^^^^^^^\n"
+        }
+      }
+    },
+    "user": {
+      "email": "",
+      "userRole": "",
+      "userPermissions": "",
+      "relationshipId": "",
+      "agencyName": "",
+      "locationName": "",
+      "locationId": "",
+      "visitorId": "",
+      "firstName": "",
+      "lastName": "",
+      "name": {},
+      "currentUrl": "",
+      "agencyWhiteLabelUrl": "",
+      "language": "",
+      "activePlan": "",
+      "hipaaEnabled": false,
+      "agencyLocationCount": 0,
+      "TranslatorAgent": {
+        "language": "en"
+      }
+    },
+    "bot": {
+      "__cognitiveModelPrefs": null
+    },
+    "conversation": {
+      "botId": "6a141421-9ba3-4787-8ee6-81f0012950d7",
+      "extraUserInfo": "",
+      "start": "2025-04-21T13:38:00.472Z",
+      "end": "",
+      "duration": 0,
+      "question": "What is a contact",
+      "kb_source": {},
+      "aiUsage": {
+        "summary": "Billed Tokens: 10,108 | Total Tokens: 10,108 | Billed Cost: $0.0217 | Total Cost: $0.0217 | Cache Savings: 0%",
+        "details": "cost    | cache | tokens | time    | location                                                                                            \n--------+-------+--------+---------+-----------------------------------------------------------------------------------------------------\n$0.0201 |       | 9,719  | 2,139ms | Hook: before_llmz_execution/inject_learnings > User Code: 1t0a6cd (20 lines) > Integration Action: a\n$0.0016 |       | 389    | 2,927ms | Hook: before_llmz_execution/inject_learnings > User Code: 1t0a6cd (20 lines) > Integration Action: a\n",
+        "usages": [
+          {
+            "count": 9719,
+            "spend": 20080000,
+            "duration": 2139,
+            "location": "Hook: before_llmz_execution/inject_learnings > User Code: 1t0a6cd (20 lines) > Integration Action: agi/improvement/findFeedback > LLMZ Iteration #llmz_01JSCA0XCHRF53KE24R1PB8DRV_1 [workflow://flow:supportv3/node/node:Support_Agent]",
+            "cached": false
+          },
+          {
+            "count": 389,
+            "spend": 1625000,
+            "duration": 2927,
+            "location": "Hook: before_llmz_execution/inject_learnings > User Code: 1t0a6cd (20 lines) > Integration Action: agi/improvement/findFeedback > Agent: SummaryAgent/conversation_turn_ended",
+            "cached": false
+          }
+        ],
+        "totalTokens": 10108,
+        "billedTokens": 10108,
+        "cost": 21705000,
+        "savingsPercent": 0
+      },
+      "aiAnswer": "incoming",
+      "SummaryAgent": {
+        "summary": "The user sought support on workflows, Smart Lists, and pipelines in HighLevel. The bot explained these features, highlighting their dynamic nature for segmentation, automation, and sales process organization. The user appreciated the help and provided positive feedback with thumbs-up emojis. The bot thanked the user and offered further assistance with pipelines or other HighLevel features. The user engaged actively and expressed satisfaction with the support provided.",
+        "transcript": "user: Hi!\nbot: I've detected your language code as \"\"\nbot: Is this the preferred language for our interaction?\nuser: Yes\nbot: {\"type\":\"image\",\"imageUrl\":\"https://files.bpcontent.cloud/2025/04/17/15/20250417150044-WCU0M3K5.webp\",\"title\":\"highly.webp\",\"fileId\":\"file_01JS248FA7TW0B587RHZ8TFGJT\"}\nbot: Hey there ! \n\n\nMy name is Highly and I am HighLevel's experimental **AI Support Assistant**!\nbot: If at any time you'd like to speak to a Human Agent simply say *Agent* and I will transfer you to one.\nbot: Just pick a category below that best describes your request, and I’ll take it from there.\nuser: Technical Support\nbot: Awesome! I can definitely help you with support.\nbot: What would you like to do?\nuser: Start Chat Support\nbot: Hello! 🙂 How can I help you today?\nuser: Where do I find workflows\nbot: To find and manage workflows in HighLevel, follow these steps: \n \n1. **Go to the Automations tab** in your HighLevel dashboard. \n2. Click on **\"Workflows\"** to view all your existing workflows【0】【4】【11】. \n3. To create a new workflow, click the **\"+ Create Workflow\"** button and choose to start from scratch or use a template【4】【11】【23】【24】. \n \nYou can also use advanced filters and Smart Lists to organize and quickly access your workflows【0】. \n \nWould you like a step-by-step guide with screenshots, or do you have a specific workflow question? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?\nuser: Ask another question\nbot: Of course! What would you like to ask next? 💡🤔\nuser: What is a workflow\nbot: A **workflow** in HighLevel is a series of automated steps that handle tasks and communications based on specific triggers—like when a contact fills out a form or joins your community. Workflows save you time by running these actions automatically, such as sending emails, updating records, or notifying your team, so you don’t have to do them manually【0】【1】【2】. \n \nEach workflow has two main parts: \n- **Triggers:** What starts the workflow (like a form submission or a new contact). \n- **Actions:** The tasks that happen automatically (like sending emails or updating CRM data)【1】【2】【23】. \n \nWould you like to see examples of common workflows or learn how to create one? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?\nuser: Yes what are smart lists\nbot: A **Smart List** in HighLevel is a dynamic contact list that updates automatically based on filters and conditions you set—like tags, custom fields, or engagement activity. Unlike static lists, Smart Lists adjust in real time as contact data changes, helping you segment, organize, and target contacts efficiently without manual updates【1】【2】【8】【10】. \n \nYou can find Smart Lists under **Subaccount → Contacts tab → Smartlists**. They’re great for automating segmentation, powering workflows, and keeping your CRM organized【1】【5】【8】. \n \nWould you like to see how to create or manage a Smart List? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding Smart Lists or any other HighLevel feature?\nuser: What is a pipeline and where do I create one\nbot: A **pipeline** in HighLevel is a visual tool that helps you organize and automate your sales or business processes by moving opportunities (like leads or deals) through different stages—such as \"Lead Capture,\" \"Qualification,\" \"Follow-up,\" and \"Closing\"【1】【5】【21】. \n \n**To find and create a pipeline:** \n1. Go to your **Subaccount**. \n2. Click on **Opportunities** from the left sidebar. \n3. Select **Pipelines** from the top menu. \n4. Click the **\"Create Pipeline\"** button and give it a unique, descriptive name. \n5. Add stages to your pipeline to match your sales or workflow process. You can reorder stages and \"Won\"/\"Lost\" stages are created by default【0】【3】【21】【23】. \n \nPipelines help automate tasks, keep your team organized, and ensure consistent engagement with your contacts【4】【5】【21】. \n \nWould you like a step-by-step guide with images, or do you have a specific question about pipelines? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding pipelines or any other HighLevel feature?\nuser: What is a contact\nbot: A **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】. \n \nWould you like to learn how to add, manage, or segment contacts in HighLevel? 🙂\n"
+      },
+      "HitlAgent": {
+        "hitlConversationType": null,
+        "hitlActive": false,
+        "hitlContext": null,
+        "humanAgentName": null
+      }
+    },
+    "configVariables": {
+      "FRESHDESK_API_KEY": "ZImWl2lmNSgyyBxXY29",
+      "BOTPRESS_API_KEY": "bp_pat_rQgpsGzZxVKS2Z78lZOoBEKHLr74mu0jiBeo",
+      "FRESHDESK_SUBDOMAIN": "olliebot-support",
+      "FRESHCHAT_API_KEY": "",
+      "FRESHCHAT_BASE_URL": ""
+    },
+    "agentVariables": {
+      "SummaryAgent": {
+        "bot": {},
+        "conversation": {
+          "summary": "The user sought support on workflows, Smart Lists, and pipelines in HighLevel. The bot explained these features, highlighting their dynamic nature for segmentation, automation, and sales process organization. The user appreciated the help and provided positive feedback with thumbs-up emojis. The bot thanked the user and offered further assistance with pipelines or other HighLevel features. The user engaged actively and expressed satisfaction with the support provided.",
+          "transcript": "user: Hi!\nbot: I've detected your language code as \"\"\nbot: Is this the preferred language for our interaction?\nuser: Yes\nbot: {\"type\":\"image\",\"imageUrl\":\"https://files.bpcontent.cloud/2025/04/17/15/20250417150044-WCU0M3K5.webp\",\"title\":\"highly.webp\",\"fileId\":\"file_01JS248FA7TW0B587RHZ8TFGJT\"}\nbot: Hey there ! \n\n\nMy name is Highly and I am HighLevel's experimental **AI Support Assistant**!\nbot: If at any time you'd like to speak to a Human Agent simply say *Agent* and I will transfer you to one.\nbot: Just pick a category below that best describes your request, and I’ll take it from there.\nuser: Technical Support\nbot: Awesome! I can definitely help you with support.\nbot: What would you like to do?\nuser: Start Chat Support\nbot: Hello! 🙂 How can I help you today?\nuser: Where do I find workflows\nbot: To find and manage workflows in HighLevel, follow these steps: \n \n1. **Go to the Automations tab** in your HighLevel dashboard. \n2. Click on **\"Workflows\"** to view all your existing workflows【0】【4】【11】. \n3. To create a new workflow, click the **\"+ Create Workflow\"** button and choose to start from scratch or use a template【4】【11】【23】【24】. \n \nYou can also use advanced filters and Smart Lists to organize and quickly access your workflows【0】. \n \nWould you like a step-by-step guide with screenshots, or do you have a specific workflow question? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?\nuser: Ask another question\nbot: Of course! What would you like to ask next? 💡🤔\nuser: What is a workflow\nbot: A **workflow** in HighLevel is a series of automated steps that handle tasks and communications based on specific triggers—like when a contact fills out a form or joins your community. Workflows save you time by running these actions automatically, such as sending emails, updating records, or notifying your team, so you don’t have to do them manually【0】【1】【2】. \n \nEach workflow has two main parts: \n- **Triggers:** What starts the workflow (like a form submission or a new contact). \n- **Actions:** The tasks that happen automatically (like sending emails or updating CRM data)【1】【2】【23】. \n \nWould you like to see examples of common workflows or learn how to create one? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other HighLevel feature?\nuser: Yes what are smart lists\nbot: A **Smart List** in HighLevel is a dynamic contact list that updates automatically based on filters and conditions you set—like tags, custom fields, or engagement activity. Unlike static lists, Smart Lists adjust in real time as contact data changes, helping you segment, organize, and target contacts efficiently without manual updates【1】【2】【8】【10】. \n \nYou can find Smart Lists under **Subaccount → Contacts tab → Smartlists**. They’re great for automating segmentation, powering workflows, and keeping your CRM organized【1】【5】【8】. \n \nWould you like to see how to create or manage a Smart List? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding Smart Lists or any other HighLevel feature?\nuser: What is a pipeline and where do I create one\nbot: A **pipeline** in HighLevel is a visual tool that helps you organize and automate your sales or business processes by moving opportunities (like leads or deals) through different stages—such as \"Lead Capture,\" \"Qualification,\" \"Follow-up,\" and \"Closing\"【1】【5】【21】. \n \n**To find and create a pipeline:** \n1. Go to your **Subaccount**. \n2. Click on **Opportunities** from the left sidebar. \n3. Select **Pipelines** from the top menu. \n4. Click the **\"Create Pipeline\"** button and give it a unique, descriptive name. \n5. Add stages to your pipeline to match your sales or workflow process. You can reorder stages and \"Won\"/\"Lost\" stages are created by default【0】【3】【21】【23】. \n \nPipelines help automate tasks, keep your team organized, and ensure consistent engagement with your contacts【4】【5】【21】. \n \nWould you like a step-by-step guide with images, or do you have a specific question about pipelines? 🙂\nbot: I'm still learning! Did this help?\nuser: 👍\nbot: Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding pipelines or any other HighLevel feature?\nuser: What is a contact\nbot: A **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】. \n \nWould you like to learn how to add, manage, or segment contacts in HighLevel? 🙂\n"
+        },
+        "executions": {},
+        "user": {},
+        "turn": {
+          "lines": [
+            "{\"sender\":\"user\",\"message\":\"What is a contact. What is a contact\"}",
+            "{\"sender\":\"bot\",\"message\":\"A **contact** in HighLevel is an individual whose information—like name, email, or phone number—is stored in your CRM. Contacts are the core of your marketing, sales, and automation processes: you can import them, segment them into lists, tag them, and trigger workflows or communications based on their activity or data【1】【21】【23】. \\n \\nWould you like to learn how to add, manage, or segment contacts in HighLevel? 🙂\"}"
+          ]
+        }
+      },
+      "TranslatorAgent": {
+        "bot": {},
+        "conversation": {},
+        "executions": {},
+        "user": {
+          "language": "en"
+        },
+        "turn": {}
+      },
+      "KnowledgeAgent": {
+        "bot": {},
+        "conversation": {},
+        "executions": {},
+        "user": {},
+        "turn": {
+          "responded": false,
+          "answer": null,
+          "citations": []
+        }
+      },
+      "VisionAgent": {
+        "bot": {},
+        "conversation": {},
+        "executions": {},
+        "user": {},
+        "turn": {
+          "content": null
+        }
+      },
+      "AnalyticsAgent": {
+        "bot": {},
+        "conversation": {},
+        "executions": {},
+        "user": {},
+        "turn": {}
+      },
+      "HitlAgent": {
+        "bot": {},
+        "conversation": {
+          "hitlConversationType": null,
+          "hitlActive": false,
+          "hitlContext": null,
+          "humanAgentName": null
+        },
+        "executions": {},
+        "user": {},
+        "turn": {}
+      }
+    }
+  },
+  "messageId": "none",
+  "flags": {},
+  "nlu": {
+    "errored": false,
+    "openbook_model_id": "eadfe510c28df888.d208c1c3dae45987",
+    "entities": [],
+    "ms": 0
+  },
+  "integration": "webchat",
+  "tags": {
+    "message": {},
+    "conversation": {},
+    "user": {}
+  },
+  "kb": {
+    "results": [
+      {
+        "chunkId": "chunk-e1d1a2338d",
+        "content": "#### [How to Install HighLevel's Chat Widget][14]\n\n#### **2.3 Capture Every Lead**\n\n* Offer instant value:\n   * \"Get a Free Home Value Estimate\"\n   * \"Download Our Seller Prep Checklist\"\n* Use pop-ups, exit-intent forms, and scroll-triggered CTAs.\n* Send every form fill or chat through HighLevel workflows.\n\n#### [How to create a contact form in HighLevel?][15]\n\n#### [Show Popup on Entering Funnel/Website][16]\n\n#### [How to Create an Exit-Intent Pop-Up in HighLevel][17]\n\n---",
+        "docId": "file_01JS9GPJD91K3DVJX1XV9ZCVSS",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.68078,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000005037-get-discovered-the-real-estate-agent-s-guide-to-dominating-google-search",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "300015a0-2da1-4422-97da-fb70bdab3a8e_optimized.md",
+          "score": 0.68078,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000005037-get-discovered-the-real-estate-agent-s-guide-to-dominating-google-search"
+        }
+      },
+      {
+        "chunkId": "chunk-132a2c62cd",
+        "content": "### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Verify Email Addresses:** Confirm that each contact in the CSV has a valid email address, as this is a required field for importing into HighLevel.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from ActiveCampaign.\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.",
+        "docId": "file_01JS93C5Z23H6T15ZEWQ8NV0V6",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63863,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003296-activecampaign-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "4d04be85-3356-4c4a-aa83-5248e80a2067_optimized.md",
+          "score": 0.63863,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003296-activecampaign-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-cacb54490b",
+        "content": "### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Wix.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from Wix.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.",
+        "docId": "file_01JS93C5G0W9BWEQPB028RGA2K",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63863,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a18dc201-0566-4596-a317-bd15c1c50624_optimized.md",
+          "score": 0.63863,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-0e9e4668ba",
+        "content": "### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to **Contacts > Settings > Custom Fields**. Add custom fields to store contact data in a similar way to how they were stored in Kajabi.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the **Contacts** section using the left-hand menu.\n* **Start Import Process:** Click the **Import Contacts** button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n\n   * _**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding._\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as \"Course A - Enrolled\" or “Imported from Kajabi.”\n* **Complete Import:** After mapping all fields and\n\nte Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.",
+        "docId": "file_01JS93C4KPWVHMXNCTF933MXSY",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63862,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003315-kajabi-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a554fcd0-2b94-453b-aace-71a694ae07e1_optimized.md",
+          "score": 0.63862,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003315-kajabi-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-f45200b6aa",
+        "content": "# **Export Contacts** > **Step 1:** Export Contacts\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155043767902/original/EqfxgqWyJueJbtG2YSUS2qlE7lsUi1HI5g.png?1742589236\n\n### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Data Formats**: Ensure all date fields follow the YYYY-MM-DD format for compatibility with HighLevel.\n* **Encode Special Characters**: Make sure the file uses UTF-8 character encoding to handle special and accented characters.\n* **Clean Data**: Remove any unnecessary characters (e.g., line breaks, emojis) and empty columns to prevent import errors.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel**: Navigate to Contacts > Import Contacts.\n* **Upload CSV File**: Select and upload the CSV file. Ensure that all required fields, such as first name, last name, email, and phone number, are properly mapped to the corresponding fields in HighLevel.\n* **Map Custom Fields**: If Kartra includes any custom fields, create those fields in HighLevel by navigating to Contacts > Settings > Custom Fields before importing the data.\n\n# **Step 3:** Import Contacts into HighLevel\n\n* **Assign Tags and Lists**: Use HighLevel's tagging and list functionalities to organize contacts according to Kartra’s segmentation structure, such as **Kartra Import** tags.\n\n**[Click here to learn more about Troubleshooting Bulk Imports Via CSV][10]**",
+        "docId": "file_01JS9GPJJNAWR00NS82XY23AW7",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63853,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000004855-kartra-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "91723357-196f-4d1a-9628-799ca5eb0cf1_optimized.md",
+          "score": 0.63853,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000004855-kartra-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-6719bdd1ff",
+        "content": "### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Zoho.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Zoho Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.",
+        "docId": "file_01JS93C5X8KAYNTQR0E1S9Z449",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.6385,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "c905daef-91eb-471c-8eb7-ab747a02b90d_optimized.md",
+          "score": 0.6385,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-d692294b35",
+        "content": "### **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Typeform.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n   * **Field Mapping Tip:** Ensure all required fields are correctly mapped.\n\n# **Step 3:** Import Contacts into HighLevel\n\nIf a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Typeform Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.",
+        "docId": "file_01JS8H516D04X6Y12736PRGVPV",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63849,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003331-typeform-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "cb2dc671-338a-4974-882c-7ec65467d830_optimized.md",
+          "score": 0.63849,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003331-typeform-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-3a938d7e3e",
+        "content": "# **Migrate Contacts, Campaigns and Automations**\n\n### **Step 1:** Export Data from Mailchimp\n\n* **Export Contacts:** Navigate to Audience > All contacts in Mailchimp. Export your audience data by selecting the relevant contacts and downloading them as CSV files.\n* **Export Email Campaigns:** Access Campaigns > All Campaigns and export any reusable content or HTML templates.\n* **Export Automations:** Document the settings of existing automation workflows, including triggers, actions, and segments.\n\n### **Step 2:** Import Contacts into HighLevel\n\n* **Import Contacts:** In HighLevel, navigate to Contacts > Import Contacts and upload the CSV file(s) exported from Mailchimp.Map any custom fields to ensure that all data is correctly imported.\n\n# **Step 2:** Import Contacts into HighLevel\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155033900333/original/hu1jNnFJroa4vCsIINjHyfZV9o8KLS80Yg.png?1727810817\n\n---",
+        "docId": "file_01JS93C60RW8MERAJSQ21YTZ5Q",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63797,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003392-mailchimp-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "66107e88-abae-47c1-b467-8a832680bb15_optimized.md",
+          "score": 0.63797,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003392-mailchimp-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-955638ed9e",
+        "content": "# **Migrate Contacts**\n\n### **Step 1:** Export Contacts (Profiles) from Klaviyo\n\n* **Export Contacts:** Navigate to the Profiles section in Klaviyo and select the profiles you want to export or use the export option for all profiles, then click Export profile data and download the data as a .zip file.\n* **Export Segments:** Document or export all segments from Klaviyo. Note the criteria used for each segment so that they can be recreated in HighLevel.\n* **Export Automation Flows:** Record all automation sequences, triggers, and actions by taking screenshots or documenting them manually.\n\n### **Step 2:** Import Contacts into HighLevel\n\n* **Import Contacts:** In HighLevel, go to Contacts > Import Contacts and upload the CSV file exported from Klaviyo, then map the custom fields from Klaviyo to HighLevel during the import process.\n* **Recreate Segments:** In HighLevel, navigate to Contacts > Smart Lists to recreate the segments from Klaviyo, and use the criteria documented from Klaviyo to ensure accurate segmentation.\n\n# **Step 2:** Import Contacts into HighLevel\n\n---",
+        "docId": "file_01JS9GPH6918CEP4RH6GHHDW2W",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.63796,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000004856-klaviyo-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "feb84e4b-72bc-445c-be32-cee41d5237bc_optimized.md",
+          "score": 0.63796,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000004856-klaviyo-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-0de6dd7a1a",
+        "content": "#### This article explains the Contact Tag Workflow Trigger in HighLevel, detailing how it can automate workflows when tags are added or removed from a contact. Learn how to set it up, explore advanced use cases, and troubleshoot common issues.\n\n---\n\n### **Table of Contents**\n\n1. What is the Contact Tag Workflow Trigger?\n2. Key Benefits of Using Contact Tag Triggers\n3. How to Set Up the Contact Tag Trigger\n4. Example use cases\n5. Advanced Use Cases\n6. Common Errors and Troubleshooting\n7. Cross-References to Related Articles\n8. Frequently Asked Questions",
+        "docId": "file_01JS862SPQQN4KHVM9HSK6KNYB",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.60306,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000002482-workflow-trigger-contact-tag",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "f1d37ebc-8acd-4bb8-801c-4d12cfca53c1_optimized.md",
+          "score": 0.60306,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000002482-workflow-trigger-contact-tag"
+        }
+      },
+      {
+        "chunkId": "chunk-96d9093db7",
+        "content": "### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from Wix.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n### ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032356825/original/xTq5H5VUuMyKN0zX7uzn1-9kf5AC-ZpUtA.jpeg?1725558143)\n\n---",
+        "docId": "file_01JS93C5G0W9BWEQPB028RGA2K",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.60171,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a18dc201-0566-4596-a317-bd15c1c50624_optimized.md",
+          "score": 0.60171,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-3677b09308",
+        "content": "]\n* [Restoring Single/Multiple Contacts][4]\n* [Reversing a Bulk Delete][5]\n* [Frequently Asked Questions][6]\n* [Related Articles][7]\n\n---\n\n## **What is Contact Restoration?**\n\nContact restoration allows you to bring back deleted contacts in your HighLevel account. It’s especially useful if contacts are accidentally deleted or removed during bulk operations. This process includes restoring related data like tasks, workflows, and messages—unless deleted separately.\n\n---\n\n## **Key Benefits of Contact Restoration**\n\nHighLevel's restoration tools help you recover lost data, maintain customer relationships, and undo mistakes with ease. Here’s why it matters:\n\n* Recover accidentally deleted leads or clients.\n* Restore the entire contact history, including notes and appointments.\n* Reverse bulk deletions with one click.\n* Saves time vs. re-importing contacts.\n* Prevents workflow interruptions from missing data.\n* Contact data is automatically reinstated.\n\n# **Key Benefits of Contact Restoration**\n\n---",
+        "docId": "file_01JS89AQ2GZM2DDSWG2NCDTNTT",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.60021,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/48001211386-recover-deleted-contacts-and-reverse-bulk-deletions",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "4e25486a-efc2-4aac-ab0b-3eedc113132b_optimized.md",
+          "score": 0.60021,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/48001211386-recover-deleted-contacts-and-reverse-bulk-deletions"
+        }
+      },
+      {
+        "chunkId": "chunk-4231435e59",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Verify Email Addresses:** Confirm that each contact in the CSV has a valid email address, as this is a required field for importing into HighLevel.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from ActiveCampaign.\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n### **Step 4:** Review Imported Data\n\n* After the import is complete, review the data in HighLevel to ensure all contacts and associated fields have been imported correctly.\n\n# **Step 4:** Review Imported Data\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.",
+        "docId": "file_01JS93C5Z23H6T15ZEWQ8NV0V6",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.59999,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003296-activecampaign-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "4d04be85-3356-4c4a-aa83-5248e80a2067_optimized.md",
+          "score": 0.59999,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003296-activecampaign-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-f5167828f7",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Wix.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from Wix.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.",
+        "docId": "file_01JS93C5G0W9BWEQPB028RGA2K",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.59704,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a18dc201-0566-4596-a317-bd15c1c50624_optimized.md",
+          "score": 0.59704,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-e322757080",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Wix.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply\n\n# **Step 3:** Import Contacts into HighLevel\n\nsign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Imported from Wix.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n### ![](https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032356825/original/xTq5H5VUuMyKN0zX7uzn1-9kf5AC-ZpUtA.jpeg?1725558143)\n\n---",
+        "docId": "file_01JS93C5G0W9BWEQPB028RGA2K",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.59654,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a18dc201-0566-4596-a317-bd15c1c50624_optimized.md",
+          "score": 0.59654,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003310-wix-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-cb5aca4548",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Typeform.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n   * **Field Mapping Tip:** Ensure all required fields are correctly mapped.\n\n# **Step 3:** Import Contacts into HighLevel\n\nIf a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Typeform Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.\n\n### **Step 4:** Review Imported Data\n\n* **Review:** Check that all data imported into HighLevel, including contacts and form submissions, is accurate and complete.\n* **Cross-Check with Typeform Data:** Compare the data in HighLevel with the original Typeform data to ensure no discrepancies.",
+        "docId": "file_01JS8H516D04X6Y12736PRGVPV",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.59297,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003331-typeform-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "cb2dc671-338a-4974-882c-7ec65467d830_optimized.md",
+          "score": 0.59297,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003331-typeform-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-f05cd85cc5",
+        "content": "### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Zoho Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.\n\n### **Step 4:** Review Imported Data\n\n* **Review:** Check that all data imported into HighLevel, including contacts and form submissions, is accurate and complete.\n* **Create Smart lists:** Recreate smartlists and mailing lists based on your migration specific tags.\n* **Cross-Check with Zoho Data:** Compare the data in HighLevel with the original Zoho data to ensure no discrepancies.\n\n# **Step 4:** Review Imported Data\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155032363608/original/tjlYmDu3vLyY2m5W4kv6ZeBs5a2sWRBMxg.jpeg?1725571473",
+        "docId": "file_01JS93C5X8KAYNTQR0E1S9Z449",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58955,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "c905daef-91eb-471c-8eb7-ab747a02b90d_optimized.md",
+          "score": 0.58955,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-e7ff51ed17",
+        "content": "An exit-intent pop-up is a message or form that appears when a visitor is about to leave a webpage. It detects when a user moves their cursor toward the browser's close button or switches tabs and triggers a pop-up with an offer, lead capture form, or call to action.\n\nExit-intent pop-ups are a powerful way to:\n\n* Reduce bounce rates\n* Capture leads before they leave\n* Offer last-minute deals or incentives\n* Improve conversion rates\n\nWith HighLevel, you can create an exit-intent pop-up to increase engagement and keep potential leads from slipping away.\n\n# Step 1: Create a Contact Form (or use a template)\n\n[How to create a contact form in HighLevel?][10]\n\n# Step 2: Add the Form to a Pop-Up\n\n## Go to the Funnel or Website Builder\n\nNavigate to the correct client account (also known as a sub-account) and then go to Sites → Funnels or Websites.\nSelect the funnel or page where you want to display the exit-intent pop-up.",
+        "docId": "file_01JS9GPDF7FZSNR9EKCT9A8VFD",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58934,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000004553-how-to-create-an-exit-intent-pop-up-in-highlevel",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "950acf3d-1061-4dfd-a6a4-85b083a563ba_optimized.md",
+          "score": 0.58934,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000004553-how-to-create-an-exit-intent-pop-up-in-highlevel"
+        }
+      },
+      {
+        "chunkId": "chunk-c49c5d219a",
+        "content": "When a Facebook message is initiated, HighLevel will automatically create a contact with the name we receive from Facebook. If the contact enters an email address into the chat, HighLevel will automatically store that in the email field of that contact.\n\n## It works for Phone Numbers too!",
+        "docId": "file_01JS87BBQMZC4HWNGB6HW9Y2VT",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58861,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/48001173609-how-to-automatically-add-email-addresses-phone-numbers-from-fb-chat-into-contact-record",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "8e9695bd-1838-4d34-8e22-476298063d23_optimized.md",
+          "score": 0.58861,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/48001173609-how-to-automatically-add-email-addresses-phone-numbers-from-fb-chat-into-contact-record"
+        }
+      },
+      {
+        "chunkId": "chunk-1e212508f0",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Zoho.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Zoho Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.\n\n### **Step 4:** Review Imported Data\n\n* **Review:** Check that all data imported into HighLevel, including contacts and form submissions, is accurate and complete.\n* **Create Smart lists:** Recreate smartlists and mailing lists based on your migration specific tags.\n* **Cross-Check with Zoho Data:** Compare the data in HighLevel with the original Zoho data to ensure no discrepancies.",
+        "docId": "file_01JS93C5X8KAYNTQR0E1S9Z449",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.5879,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "c905daef-91eb-471c-8eb7-ab747a02b90d_optimized.md",
+          "score": 0.5879,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-c2d9cc2a18",
+        "content": "# **Step 2:** Prepare CSV for HighLevel Import\n\n* **Check Date Formats:** Ensure all date fields in the CSV are in the YYYY-MM-DD format. This is essential for compatibility with HighLevel.\n* **Encode Special Characters:** Make sure the CSV file uses UTF-8 character encoding to properly handle special and accented characters.\n* **Clean Up Data:** Remove any line breaks, emojis, and unnecessary special characters from the file. This step helps prevent import errors.\n\n* **Recreate Custom Fields:** Log in to HighLevel and navigate to Contacts > Settings > Custom Fields. Add custom fields to store contact data in a similar way to how they were stored in Zoho.\n\n### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the Contacts section using the left-hand menu.\n* **Start Import Process:** Click the Import Contacts button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding.\n\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as “Zoho Import.”\n* **Complete Import:** After mapping all fields and setting tags/lists, click Import.\n\nHighLevel will process the import, and the contacts will be added to your account.",
+        "docId": "file_01JS93C5X8KAYNTQR0E1S9Z449",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.5844,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "c905daef-91eb-471c-8eb7-ab747a02b90d_optimized.md",
+          "score": 0.5844,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003316-zoho-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-f48f28dc6a",
+        "content": "# **How to Use Webhooks in HighLevel** > **(A) Inbound Webhook**\n\n**4\\. Send a Test**\nNow we need to send a sample payload to our HighLevel Webhook URL in order to proceed. Within your external app, Zapier in this example, go to the end of the step and hit “Test Step.” For sending a test payload in HighLevel for an external app, please consult your external app documentation and Support. In HighLevel, continue to wait and refresh the “Mapping Reference” Section until you have a “Mapping Reference” in HighLevel available to select.\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155011887243/original/M5bHGIPHDZ8foG5ik_NZlUF86q6Lk4QbxA.png?1699043936\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010241070/original/IOAjncnP7_DzLx_BrkksQdSwP2Hv43Ncdg.png?1697473846\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010241069/original/QoSSEVtaJAx113nCW8stk0LNM4J8Vv4rhQ.png?1697473846\n\n**5\\. Create/Update Contact**\nFor HighLevel, we require a contact for every single Automation to run. This is why the “Create/Update Contact” will open automatically. You can also use the \"Find Contact\" Action to locate a contact based on a custom field or another value. It is required to have this filled out, otherwise, this will NOT work and the Workflow will break. So at minimum, create/update the phone or email from the payload of the inbound webhook or find a contact based on a custom field or such.\n\nA contact found or matched is required in order for this to work.\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010241065/original/1jIFtXcVBneM-vnEM2w50nn0Zx8VQW_AvQ.png?1697473844",
+        "docId": "file_01JS8BZ8N99YB1FPX356A0CAJT",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58139,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000001183-how-to-use-webhooks-in-highlevel-zapier-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "ed109a20-2cfc-4345-a634-073c40fcaddc_optimized.md",
+          "score": 0.58139,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000001183-how-to-use-webhooks-in-highlevel-zapier-"
+        }
+      },
+      {
+        "chunkId": "chunk-d023d6665a",
+        "content": "### **Step 3:** Import Contacts into HighLevel\n\n* **Log in to HighLevel:** Navigate to the **Contacts** section using the left-hand menu.\n* **Start Import Process:** Click the **Import Contacts** button.\n* **Upload CSV File:** Select and upload the prepared CSV file.\n* **Map Fields:** HighLevel will prompt you to map the fields from the CSV file to the corresponding fields in HighLevel. For example, map “First Name” in the CSV to “First Name” in HighLevel.\n\n# **Step 3:** Import Contacts into HighLevel\n\n\n   * _**Field Mapping Tip:** Ensure all required fields are correctly mapped. If a field in your CSV does not have a corresponding field in HighLevel, you may need to create a custom field in HighLevel before proceeding._\n* **Assign Tags and Lists:** During the import process, you can assign contacts to specific lists and apply tags. Consider applying a tag that indicates the source of the contacts, such as \"Course A - Enrolled\" or “Imported from Kajabi.”\n* **Complete Import:** After mapping all fields and\n\nte Import:** After mapping all fields and setting tags/lists, click Import. HighLevel will process the import, and the contacts will be added to your account.\n\n[Click here for more information about Troubleshooting Bulk Imports Via CSV][9]\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155042993814/original/-v3u8VFPvrlEuflYZzbTH-3WKYOjBXX8Hw.png?1741632257\n\n---",
+        "docId": "file_01JS93C4KPWVHMXNCTF933MXSY",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58133,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000003315-kajabi-to-highlevel-migration-guide-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "a554fcd0-2b94-453b-aace-71a694ae07e1_optimized.md",
+          "score": 0.58133,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000003315-kajabi-to-highlevel-migration-guide-"
+        }
+      },
+      {
+        "chunkId": "chunk-e11b0282f3",
+        "content": "# **How to Use Webhooks in HighLevel** > **(A) Inbound Webhook**\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010241069/original/QoSSEVtaJAx113nCW8stk0LNM4J8Vv4rhQ.png?1697473846\n\n**5\\. Create/Update Contact**\nFor HighLevel, we require a contact for every single Automation to run. This is why the “Create/Update Contact” will open automatically. You can also use the \"Find Contact\" Action to locate a contact based on a custom field or another value. It is required to have this filled out, otherwise, this will NOT work and the Workflow will break. So at minimum, create/update the phone or email from the payload of the inbound webhook or find a contact based on a custom field or such.\n\nA contact found or matched is required in order for this to work.\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010241065/original/1jIFtXcVBneM-vnEM2w50nn0Zx8VQW_AvQ.png?1697473844\n\nNow you are done! You have the information in HighLevel to map and use as you like within the Workflow.\n**Mapping Information in HighLevel**\nNow you can use this information within \"Custom Values\" > \"Inbound Webhook Trigger\" to map the information from the payload into the correct fields or actions in HighLevel. So when it runs, the right information from the Inbound WEbhook will populate in the correct place in HighLevel.\n\nhttps://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/155010246863/original/vQ-E_DHbKtdc6AQblQyV1MWKzmRaAr-JMQ.png?1697478103\n\nLearn more about [Inbound Webhooks in HighLevel here][13].\nWant to learn more about Zapier and how to use it?[ Getting Started with Zapier][9].\n---",
+        "docId": "file_01JS8BZ8N99YB1FPX356A0CAJT",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.5808,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/155000001183-how-to-use-webhooks-in-highlevel-zapier-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "ed109a20-2cfc-4345-a634-073c40fcaddc_optimized.md",
+          "score": 0.5808,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/155000001183-how-to-use-webhooks-in-highlevel-zapier-"
+        }
+      },
+      {
+        "chunkId": "chunk-bf13b161b5",
+        "content": "Webinars are great ways to share information with your audience. [WebinarKit][1] makes webinars easier than ever by providing a simple way to create professional-looking webinars in minutes. WebinarKit gives you everything you need to make high-quality webinars fast and easy.\n\nIn this article, we'll cover how to use [WebinarKit][1] with HighLevel\n**Guest article:** <https://help.webinarkit.com/help/using-webinarkit-s-unique-highlevel-integration>\n---\nWebinarKit has built-in integration with HighLevel. This integration supports the standard features that we support with all of our other integrations.\n\nFor example, adding a contact to HighLevel when someone registers for a webinar, tagging a contact when someone attends, etc...\nYou can learn more about these features and our standard integration features with HighLevel here: **<https://help.webinarkit.com/help/using-webinarkit-s-3rd-party-integrations>**\n\nWebinarKit's HighLevel integration also supports a unique feature unavailable for our other integrations: The ability to register a contact for your webinars when that contact is added to your HighLevel account.\n\n## **How to enable the feature in WebinarKit with HighLevel**\n\nTo get started, head over to your WebinarKit dashboard. Then open up the settings for the webinar you want new HighLevel contacts to be registered for.\nHead to the \"**Other**\" settings page of your webinar and scroll down to \"**HighLevel**\" under the Integrations section. Click on the HighLevel accordion item to open up the HighLevel settings, then scroll down to the bottom.\n\n# **How to enable the feature in WebinarKit with HighLevel**\n\nhttps://cdn.filestackcontent.com/JoofbixQSii5dijaYX3x",
+        "docId": "file_01JS8H528X3ENZF5A7K41WQDZ5",
+        "dsType": "file-api",
+        "ds": {
+          "created_on": 1745100104803,
+          "data": {},
+          "disabled": false,
+          "id": "ds-3988a36b8b",
+          "type": "file-api"
+        },
+        "dsId": "ds-3988a36b8b",
+        "kbId": "kb-b1dd3a655d",
+        "kbDescription": "This is about HighLevel (HTML Optimized)",
+        "score": 0.58022,
+        "title": "https://help.gohighlevel.com/support/solutions/articles/48001225332-how-to-use-webinarkit-s-highlevel-integration-guest-tutorial-",
+        "dsFriendlyName": "(HighLevel_Markdown_Optimized) File API",
+        "metadata": {
+          "type": "doc",
+          "fileName": "0ec3c2ae-b982-4f7d-82fb-3e7d0b8b892a_optimized.md",
+          "score": 0.58022,
+          "title": "https://help.gohighlevel.com/support/solutions/articles/48001225332-how-to-use-webinarkit-s-highlevel-integration-guest-tutorial-"
+        }
+      }
+    ],
+    "included": [
+      {
+        "dataSources": [
+          {
+            "created_on": 1745107070838,
+            "data": {},
+            "disabled": false,
+            "id": "ds-43d0d47171",
+            "type": "file-api"
+          },
+          {
+            "created_on": 1745117559351,
+            "data": {
+              "dataTableId": "table_01JS85VH001VHRTWCDHMM4TFAQ",
+              "excludedColumnIds": []
+            },
+            "disabled": false,
+            "id": "ds-7aacb93e7c",
+            "type": "table"
+          }
+        ],
+        "description": "This is about Question & Answer",
+        "id": "kb-1e10317bbd",
+        "modalities": [
+          "text",
+          "image"
+        ],
+        "name": "Question_Answer",
+        "parentFolder": "root"
+      },
+      {
+        "dataSources": [
+          {
+            "created_on": 1745100104803,
+            "data": {},
+            "disabled": false,
+            "id": "ds-3988a36b8b",
+            "type": "file-api"
+          }
+        ],
+        "description": "This is about HighLevel (HTML Optimized)",
+        "id": "kb-b1dd3a655d",
+        "modalities": [
+          "text",
+          "image"
+        ],
+        "name": "HighLevel_Markdown_Optimized",
+        "parentFolder": "root"
+      }
+    ]
+  }
+}

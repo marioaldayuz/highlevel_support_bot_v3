@@ -1,0 +1,1892 @@
+{
+"id": "llmz_01JSC7ATNXDN4X4QZXH456AWRA",
+"__options": {
+"id": "llmz_01JSC7ATNXDN4X4QZXH456AWRA",
+"version": "01-Oct-2024",
+"instructions": "\nName: HighLevel Support Bot v3 [DO NOT TOUCH] \n\n\n# Highly Support Bot Instructions\n\n## Variable Declarations\n\nEach of the variables provided below are writeable variables that should be considered for update on each turn of the conversation. It is critical that you ensure the variables are up to date. All variables should be stored in English without any exceptions. \n- {workflow.sentiment} = A three option score of (positive | neutral | negative) based on the user's active sentiment for each turn. \n- {workflow.confidence} = A numeric score of 0.0-1.0 representative of the confidence of answer score based on the returned knowledge base items and potential for error. e.g. A score of 0.0 is a completely hallucinated or generated answer; A score of 1.0 is purely sourced in knowledge and guaranteed to be accurate; A score of 0.5 has some probability to be accurate but the amount of citations are low or the overall provided answer has some potential for having been hallucinated or generated.\n- {workflow.clarification_count} = Starting at 0 this is the number of times you have asked a clarifying question to the user. On each clarifying question increment this value by 1. When the question or topic switches reset this count to 0.\n- {workflow.carification_reason} = Based on the reason for asking the clarifying question should be updated prior to asking the clarifying question to one of the following values: ("ambiguous_intent" | "missing_details"). When the question or topic switches reset this to a blank or null value.\n- {workflow.attempts_before_success} = \n- {workflow.escalation_trigger} = Based on the reason for escalation to a Human Agent as indicated by the user. Should be one of the following values: ("human_requested" | "sentiment_negative" | "clarification_fail" | "rejection").\n - "human_requested" = If the user requests to speak with a Human Agent or their intent is to speak with a Human Agent.\n - "sentiment_negative" = If the sentiment of the user as interpreted becomes negative.\n - "clarification_fail" = If after (2) attempts of clarification for the same question you have not been able to successfully achieve a 0.6 confidence score or greater.\n - "rejection" = If the user indicates that your answer was incorrect or rejects your answer in any way.\n\n## Name & Miscellaneous Information\n- Name: Your name is "Highly"\n- Company: You work for a company named "HighLevel"\n\n## Role:\n- Support agent for HighLevel CRM software https://www.gohighlevel.com also referred to as GHL or GoHighLevel.\n\n## Explicit Reinforcement:\n- "Start Chat Support" is a label selected by the user at the beginning of the conversation and not a query. Do not treat it as their question and instead just greet them normally.\n- Your core responsibility is to detect intent and correctly route queries—never to assume or guess answers.\n- If the query is unclear → Ask for clarification before fetching a response.\n- If the bot is uncertain → Do not guess; ask the user.\n- Only retrieve information after the requirement is confirmed.\n- Use the correct flow logic card based on the user’s clarified intent.\n- Prioritize accuracy, relevance, and user satisfaction in all interactions.\n- Ensure Feedback Collection: After every successful response, the bot must always trigger the {askforfeedback} card.\n - The askForFeedback card must be shown for every response to capture user input, as the topic or intent of each question may vary.\n - The bot cannot skip this step under any circumstances.\n- Use if present to determine if the user agreed with your response or not.\n\n## Primary Objectives:\n- Provide detailed support using available knowledge bases.\n- Maintain human-like conversation with emojis and emotional intelligence.\n- Adhere to specific naming conventions and information sources.\n\n## General Instructions:\n- Do not reference "event.preview" (the previous message).\n- Never hallucinate, assume, or guess the meaning of a user's query.\n- Every response must be sourced from the relevant knowledge base flow logic, with article links and citations included.\n- Fallback to {speakToAgent} under any of these conditions:\n (a) The user explicitly requests a human (phrases like “human agent”, “real person”, “someone live”, “talk to support”).\n (b) Sentiment analysis returns a negative or the message contains profanity/insults aimed at the bot, indicating high frustration.\n (c) The user marks two answers in a row as “Not helpful” or rejects two consecutive clarification attempts.\n (d) The user explicitly states they do not wish to continue with the bot.\n- "Technical Support" is a label selected by the user at the beginning of the conversation and not a query. Do not treat it as a request for assistance.\n\n## Key Behaviors:\n- Greet users with their first name which is and ask them "How can I help you today?".\n- Use emojis thoughtfully to signal tone: ✅🙂 for successful outcomes or positive sentiment, ⚠️😟 for issues or frustration, and 💡🤔 when requesting clarification. Limit emoji usage to one pair per message to stay professional and on‑brand. Emojis are optional; include them only when they enhance clarity or empathy.\n- If a user appears frustrated offer for them to speak to an agent.\n- Be concise yet thorough in responses.\n- Ask for clarification when needed.\n- Offer to transfer to a human agent after five unsuccessful interactions—where an interaction is deemed unsuccessful if (a) the user selects “Not helpful” in the feedback card or explicitly states the answer was not helpful, (b) the bot’s confidence score for its answer falls below 0.5, or (c) the clarification loop has cycled more than twice without resolution—or at any point the user appears frustrated.\n\n## User Interaction:\n- After each response, ask if the answer was helpful.\n- If not helpful, seek more context and refine the answer.\n- Utilize SynonymTable for understanding user phrasing. For example, if the user says "twilio" they may mean "Lead Connector." The table for synonyms is: table_01JS8CD4FJCVKF65KJER0Z05M0\n\n# Knowledge & Information\n\n## Knowledge/Information Sources:\n- Primary: Knowledge Base ID {kb-1e10317bbd} which contains an indexed table of guaranteed correct answers provided by support technicians.\n- Secondary: Knowledge Base ID kb-aea56e4ba6 which contains an indexed repository of all help articles from HighLevel's Knowledge Base.\n- Use Knowledge Base ID kb-1e10317bbd as the first query then fallback to kb-aea56e4ba6 if you do not find an answer that is relevant and matches the user's query.\n\n# Question & Answer\n\n## Question & Answer Parameters:\n- Under no circumstances should you guess when responding to a user.\n- Instead of guessing or possibly hallucinating inform the user that you are still under training and do not have the best answer for them at this time then offer for them to speak to an agent.\n- Avoid redundant clarifications that contradict the user’s request.\n- If the intent is already clear, do not ask unnecessary follow-up questions.\n- Detect and resolve ambiguity before fetching a response.\n- If multiple knowledge base documents provide similar information, ask the user which specific issue they are referring to instead of guessing.\n - Example Scenario:\n - User: "How do I use the chatbot?"\n - Bot: "Are you asking about Conversation AI or a different chatbot feature? Could you clarify?"\n- When a user asks a question before proceeding, analyze the query.\n - If the query is unclear, broad, or vague, ask specific follow-up questions to understand exactly what the user needs.\n - Example:\n If the user says, "I need help with Voice AI," ask: "Could you clarify what aspect of Voice AI you need help with? Are you facing setup issues, call quality problems, or something else?"\n - Only proceed to answering the question when the user’s request is clear.\n## Question & Answer Database Management:\n- Do not inform users about data storage practices.\n\n## Sensitive Topic Handling: Cancellation & Refunds\n- Any queries related to cancellation and refunds must be redirected to the support team.\n- Politely inform users that the support team will assist them with their request and to select the appropriate category of request.\n- Redirect the user to the "Router" flow as described by the "Router" flow instructions.\n- Your canned response for this type of situation is " I apologize however I am not able to assist with any billing, refund, or cancellation questions. Instead, I will have to route you back to the previous area where you should select 'Billing Questions' as the area of assistance so you can reach the billing team. Alternatively, you can reach out to our billing team via telephone at +1 (888) 732-4197 and they can also assist you further."\n\n## Retrieving the Correct Information\n- Review the instruction of each flow logic card and automatically route the search to the right branch based on the instruction & user’s clarified intent.\n- If the user mentions "Voice AI," do NOT assume they mean "Conversation AI" (as both are different). Instead, confirm for clarity.\n\n# MixPanel Analytics Properties\n\n## MixPanel Events for the MixPanel {Track Event} Card\n\nCritical Directive:** Track ALL events possible via MixPanel as directed in the MixPanel {Track Event} Card Prompt. \n\n\n## How to search for information\n\nYou have the search tool available to search for information in the official knowledge bases.\nYou must use it when you need to find information or answers to user questions.\nIn other words, do NOT rely on your own knowledge (ie. hallucinate) to answer questions. Use the search tool instead (or another tool that is better suited for the task).\nUsing search will return a think event with the information found.\n\n",
+"objects": [
+{
+"name": "bot",
+"description": "Pay attention to the properties and tools of this object to understand what you can do and how you should interact with the user.\nSpecifically, the properties of this object will guide your responses styling and the kind of help you can or can't provide.",
+"properties": [],
+"tools": []
+},
+{
+"name": "user",
+"description": "This object represents the user.",
+"properties": [
+{
+"name": "email",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "userRole",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "userPermissions",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "relationshipId",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "agencyName",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "locationName",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "locationId",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "visitorId",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "firstName",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "lastName",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "name",
+"value": {},
+"type": {
+"_def": {
+"innerType": {
+"_def": {
+"typeName": "ZodUnknown"
+},
+"_unknown": true
+},
+"typeName": "ZodDefault"
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "currentUrl",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "agencyWhiteLabelUrl",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "language",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "activePlan",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "hipaaEnabled",
+"value": false,
+"type": {
+"_def": {
+"typeName": "ZodBoolean",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+},
+{
+"name": "agencyLocationCount",
+"value": 0,
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodNumber",
+"coerce": false
+}
+},
+"description": "",
+"writable": false
+}
+],
+"tools": []
+},
+{
+"name": "clock",
+"description": "This object give you the current date/time but also allows you to set yourself reminders for in the future.",
+"properties": [
+{
+"name": "Reminders",
+"value": [],
+"description": "List of reminders you have set"
+}
+],
+"tools": [
+{
+"name": "delay",
+"aliases": [
+"delay"
+],
+"description": "Waits for a certain amount of time before continuing, up to 30 seconds",
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"typeName": "ZodVoid"
+}
+},
+"typeName": "ZodPromise"
+}
+}
+},
+{
+"name": "setReminder",
+"aliases": [
+"setReminder"
+],
+"description": "Set a reminder for the future",
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"typeName": "ZodPromise"
+}
+}
+}
+]
+},
+{
+"name": "workflow",
+"description": "This is the current Workflow in progress",
+"properties": [
+{
+"name": "workflowName",
+"value": "supportv3",
+"description": "The name of the current workflow"
+},
+{
+"name": "description",
+"description": "The description/goal of the current workflow"
+},
+{
+"name": "sentiment",
+"value": "neutral",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "confidence",
+"value": 0.3,
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodNumber",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "clarification_reason",
+"value": "ambiguous_intent",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "escalation_trigger",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "attempts_before_success",
+"value": "",
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "clarification_count",
+"value": 1,
+"type": {
+"_def": {
+"checks": [],
+"typeName": "ZodNumber",
+"coerce": false
+}
+},
+"description": "",
+"writable": true
+},
+{
+"name": "feedback",
+"value": {},
+"type": {
+"_def": {
+"innerType": {
+"_def": {
+"typeName": "ZodUnknown"
+},
+"_unknown": true
+},
+"typeName": "ZodDefault"
+}
+},
+"description": "",
+"writable": false
+}
+],
+"tools": []
+},
+{
+"name": "plusmixpanel",
+"description": "Integrate Mixpanel with Botpress",
+"properties": [
+{
+"name": "IntegrationName",
+"value": "Mixpanel"
+}
+],
+"tools": [
+{
+"name": "trackEvent",
+"aliases": [
+"trackEvent"
+],
+"description": "\nDescription:Track event\n\n\n\n\nInstructions:\nUse this card to fire MixPanel events on EVERY turn according to the guidance provided below:\n\n# MixPanel and Analytics Properties\n\n## MixPanel Events for the MixPanel {Track Event} Card\n\n### Conversation events\n- user_question \n When to fire: each inbound user message \n Properties: convo-1, I want to setup for my business\n\n- ai_answer \n When to fire: bot sends a reply \n Properties: convo-1\n\n- clarification_requested \n When to fire: bot asks a clarifying question \n Properties: convo-1, 1, ambiguous_intent ("ambiguous_intent" | "missing_details")\n\n- clarification_resolved \n When to fire: user provides info and bot resumes normal flow \n Properties: convo-1, 1\n\n- clarification_loop_exceeded \n When to fire: more than two clarification cycles without resolution \n Properties: convo-1, 1\n\n\n### Knowledge‑base events\n- kb_query \n When to fire: bot executes a search against KB‑1 or KB‑2 \n Properties: convo-1, I want to setup for my business, \n\n- kb_hit \n When to fire: a document is found and cited \n Properties: convo-1, \n\n- kb_miss \n When to fire: no relevant document returned \n Properties: convo-1, I want to setup for my business\n\n\n### Escalation / deflection events\n- fallback_condition_met \n When to fire: any prompt fallback trigger (a–d) is hit \n Properties: convo-1, ("human_requested" | "sentiment_negative" | "clarification_fail" | "rejection")\n\n- transfer_to_agent \n When to fire: bot hands off via {speakToAgent} \n Properties: convo-1\n\n- deflection_success \n When to fire: user accepts the bot’s answer \n Properties: convo-1, \n",
+"input": {
+"_def": {
+"unknownKeys": "strict",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject",
+"x-zui": {}
+},
+"_cached": {
+"shape": {
+"userId": {
+"_def": {
+"innerType": {
+"_def": {
+"value": "",
+"typeName": "ZodLiteral"
+}
+},
+"typeName": "ZodCatch"
+}
+},
+"eventName": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false,
+"description": "The event name to track",
+"x-zui": {}
+}
+},
+"eventPayload": {
+"_def": {
+"innerType": {
+"_def": {
+"checks": [],
+"typeName": "ZodString",
+"coerce": false,
+"description": "The properties of the event as a JSON String"
+}
+},
+"typeName": "ZodOptional",
+"description": "The properties of the event as a JSON String",
+"x-zui": {}
+}
+}
+},
+"keys": [
+"userId",
+"eventName",
+"eventPayload"
+]
+}
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strict",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject",
+"x-zui": {}
+},
+"_cached": {
+"shape": {},
+"keys": []
+}
+},
+"typeName": "ZodPromise"
+}
+}
+}
+]
+}
+],
+"tools": [
+{
+"name": "mainRouter",
+"aliases": [
+"mainRouter"
+],
+"description": "Will run the workflow "mainRouter".\nWhen to call this workflow:\nIf the user indicates they have completed all of their queries or would like to ask another question redirect them to this main router.",
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"typeName": "ZodPromise",
+"description": "The output of the workflow execution"
+}
+}
+},
+{
+"name": "askForFeedback",
+"aliases": [
+"askForFeedback"
+],
+"description": "Will run the workflow "askForFeedback".\nWhen to call this workflow:\nAfter every successful response generation use this flow to capture feedback.",
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": {
+"shape": {
+"sentiment": {
+"_def": {
+"innerType": {
+"_def": {
+"value": "neutral",
+"typeName": "ZodLiteral"
+}
+},
+"typeName": "ZodCatch"
+}
+},
+"confidence": {
+"_def": {
+"innerType": {
+"_def": {
+"value": 0.3,
+"typeName": "ZodLiteral"
+}
+},
+"typeName": "ZodCatch"
+}
+},
+"aiAnswer": {
+"_def": {
+"innerType": {
+"_def": {
+"value": "",
+"typeName": "ZodLiteral"
+}
+},
+"typeName": "ZodCatch"
+}
+},
+"question": {
+"_def": {
+"innerType": {
+"_def": {
+"value": "",
+"typeName": "ZodLiteral"
+}
+},
+"typeName": "ZodCatch"
+}
+}
+},
+"keys": [
+"sentiment",
+"confidence",
+"aiAnswer",
+"question"
+]
+}
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"typeName": "ZodPromise",
+"description": "The output of the workflow execution"
+}
+}
+},
+{
+"name": "speakToAgent",
+"aliases": [
+"speakToAgent"
+],
+"description": "Will run the workflow "speakToAgent".\nWhen to call this workflow:\nIf at any point any of the following conditions are met immediately offer to transfer the user to a Human Agent:\n\n- Confidence of answer provided to the user would be less than 0.6.\n- Sentiment of user changes to negative.\n- The user indicates their intent is to speak to a Human Agent (in any language or synonyms of agent)\n- The clarification count reaches 5.",
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"typeName": "ZodPromise",
+"description": "The output of the workflow execution"
+}
+}
+},
+{
+"name": "search",
+"aliases": [
+"search"
+],
+"description": "Searches for information in the official knowledge bases.",
+"metadata": {
+"kbs": {
+"enabled": true,
+"kbs": [
+"kb-1e10317bbd",
+"kb-b1dd3a655d"
+],
+"searchScope": "specific"
+},
+"advanced": {
+"mode": "breadcrumb",
+"maxTokens": 200,
+"contextDepth": 3
+}
+},
+"input": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": {
+"shape": {
+"query": {
+"_def": {
+"checks": [
+{
+"kind": "min",
+"value": 1,
+"message": "Query must not be empty"
+}
+],
+"typeName": "ZodString",
+"coerce": false,
+"description": "The query to search for. This can be a question, a statement, or keywords.\nReferences need to be resolved from the context before being passed to the search tool.\nFor example: "How old is he?" is invalid, instead pass a resolved query like "How old is John?" as the search tool does not have access to the context."
+}
+}
+},
+"keys": [
+"query"
+]
+}
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"unknownKeys": "strip",
+"catchall": {
+"_def": {
+"typeName": "ZodNever"
+}
+},
+"typeName": "ZodObject"
+},
+"_cached": null
+},
+"typeName": "ZodPromise"
+}
+}
+},
+{
+"name": "Message",
+"aliases": [
+"IMAGE",
+"CARD",
+"BUTTON",
+"CAROUSEL",
+"VIDEO",
+"AUDIO",
+"FILE",
+"Message"
+],
+"input": {
+"_def": {
+"schema": {
+"_def": {
+"typeName": "ZodAny"
+},
+"_any": true
+},
+"typeName": "ZodEffects",
+"effect": {
+"type": "refinement"
+}
+}
+},
+"output": {
+"_def": {
+"type": {
+"_def": {
+"typeName": "ZodVoid"
+}
+},
+"typeName": "ZodPromise"
+}
+}
+}
+],
+"loop": 5,
+"temperature": 0.2,
+"models": {
+"openai__gpt-4.1-2025-04-14": {
+"id": "openai__gpt-4.1-2025-04-14",
+"modelId": "gpt-4.1-2025-04-14",
+"integrationName": "openai",
+"label": "GPT 4.1",
+"inputCostPer1MTokens": 2,
+"inputMaxTokens": 1047576,
+"outputCostPer1MTokens": 8,
+"outputMaxTokens": 32768,
+"description": "GPT 4.1 is our flagship model for complex tasks. It is well suited for problem solving across domains. The knowledge cutoff is June 2024.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose"
+]
+},
+"openai__gpt-4.1-mini-2025-04-14": {
+"id": "openai__gpt-4.1-mini-2025-04-14",
+"modelId": "gpt-4.1-mini-2025-04-14",
+"integrationName": "openai",
+"label": "GPT 4.1 Mini",
+"inputCostPer1MTokens": 0.4,
+"inputMaxTokens": 1047576,
+"outputCostPer1MTokens": 1.6,
+"outputMaxTokens": 32768,
+"description": "GPT 4.1 mini provides a balance between intelligence, speed, and cost that makes it an attractive model for many use cases. The knowledge cutoff is June 2024.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose"
+]
+},
+"openai__gpt-4.1-nano-2025-04-14": {
+"id": "openai__gpt-4.1-nano-2025-04-14",
+"modelId": "gpt-4.1-nano-2025-04-14",
+"integrationName": "openai",
+"label": "GPT 4.1 Nano",
+"inputCostPer1MTokens": 0.1,
+"inputMaxTokens": 1047576,
+"outputCostPer1MTokens": 0.4,
+"outputMaxTokens": 32768,
+"description": "GPT-4.1 nano is the fastest, most cost-effective GPT 4.1 model. The knowledge cutoff is June 2024.",
+"tags": [
+"low-cost",
+"vision",
+"general-purpose"
+]
+},
+"openai__o3-mini-2025-01-31": {
+"id": "openai__o3-mini-2025-01-31",
+"modelId": "o3-mini-2025-01-31",
+"integrationName": "openai",
+"label": "GPT o3-mini",
+"inputCostPer1MTokens": 1.1,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 4.4,
+"outputMaxTokens": 100000,
+"description": "o3-mini is the most recent small reasoning model from OpenAI, providing high intelligence at the same cost and latency targets of o1-mini. o3-mini also supports key developer features, like Structured Outputs, function calling, Batch API, and more. Like other models in the o-series, it is designed to excel at science, math, and coding tasks. The knowledge cutoff for o3-mini models is October, 2023.",
+"tags": [
+"reasoning",
+"general-purpose"
+]
+},
+"openai__o1-2024-12-17": {
+"id": "openai__o1-2024-12-17",
+"modelId": "o1-2024-12-17",
+"integrationName": "openai",
+"label": "GPT o1",
+"inputCostPer1MTokens": 15,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 60,
+"outputMaxTokens": 100000,
+"description": "The o1 model is designed to solve hard problems across domains. The o1 series of models are trained with reinforcement learning to perform complex reasoning. o1 models think before they answer, producing a long internal chain of thought before responding to the user.",
+"tags": [
+"reasoning",
+"vision",
+"general-purpose"
+]
+},
+"openai__o1-mini-2024-09-12": {
+"id": "openai__o1-mini-2024-09-12",
+"modelId": "o1-mini-2024-09-12",
+"integrationName": "openai",
+"label": "GPT o1-mini",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 12,
+"outputMaxTokens": 65536,
+"description": "The o1-mini model is a fast and affordable reasoning model for specialized tasks. The o1 series of models are trained with reinforcement learning to perform complex reasoning. o1 models think before they answer, producing a long internal chain of thought before responding to the user.",
+"tags": [
+"reasoning",
+"vision",
+"general-purpose"
+]
+},
+"openai__gpt-4o-mini-2024-07-18": {
+"id": "openai__gpt-4o-mini-2024-07-18",
+"modelId": "gpt-4o-mini-2024-07-18",
+"integrationName": "openai",
+"label": "GPT-4o Mini",
+"inputCostPer1MTokens": 0.15,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.6,
+"outputMaxTokens": 16384,
+"description": "GPT-4o mini (“o” for “omni”) is OpenAI's most advanced model in the small models category, and their cheapest model yet. It is multimodal (accepting text or image inputs and outputting text), has higher intelligence than gpt-3.5-turbo but is just as fast. It is meant to be used for smaller tasks, including vision tasks. It's recommended to choose gpt-4o-mini where you would have previously used gpt-3.5-turbo as this model is more capable and cheaper.",
+"tags": [
+"recommended",
+"vision",
+"low-cost",
+"general-purpose",
+"function-calling"
+]
+},
+"openai__gpt-4o-2024-11-20": {
+"id": "openai__gpt-4o-2024-11-20",
+"modelId": "gpt-4o-2024-11-20",
+"integrationName": "openai",
+"label": "GPT-4o (November 2024)",
+"inputCostPer1MTokens": 2.5,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 10,
+"outputMaxTokens": 16384,
+"description": "GPT-4o (“o” for “omni”) is OpenAI's most advanced model. It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is cheaper and more efficient.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose",
+"coding",
+"agents",
+"function-calling"
+]
+},
+"openai__gpt-4o-2024-08-06": {
+"id": "openai__gpt-4o-2024-08-06",
+"modelId": "gpt-4o-2024-08-06",
+"integrationName": "openai",
+"label": "GPT-4o (August 2024)",
+"inputCostPer1MTokens": 2.5,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 10,
+"outputMaxTokens": 16384,
+"description": "GPT-4o (“o” for “omni”) is OpenAI's most advanced model. It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is cheaper and more efficient.",
+"tags": [
+"deprecated",
+"vision",
+"general-purpose",
+"coding",
+"agents",
+"function-calling"
+]
+},
+"openai__gpt-4o-2024-05-13": {
+"id": "openai__gpt-4o-2024-05-13",
+"modelId": "gpt-4o-2024-05-13",
+"integrationName": "openai",
+"label": "GPT-4o (May 2024)",
+"inputCostPer1MTokens": 5,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 15,
+"outputMaxTokens": 4096,
+"description": "GPT-4o (“o” for “omni”) is OpenAI's most advanced model. It is multimodal (accepting text or image inputs and outputting text), and it has the same high intelligence as GPT-4 Turbo but is cheaper and more efficient.",
+"tags": [
+"deprecated",
+"vision",
+"general-purpose",
+"coding",
+"agents",
+"function-calling"
+]
+},
+"openai__gpt-4-turbo-2024-04-09": {
+"id": "openai__gpt-4-turbo-2024-04-09",
+"modelId": "gpt-4-turbo-2024-04-09",
+"integrationName": "openai",
+"label": "GPT-4 Turbo",
+"inputCostPer1MTokens": 10,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 30,
+"outputMaxTokens": 4096,
+"description": "GPT-4 is a large multimodal model (accepting text or image inputs and outputting text) that can solve difficult problems with greater accuracy than any of our previous models, thanks to its broader general knowledge and advanced reasoning capabilities.",
+"tags": [
+"deprecated",
+"general-purpose",
+"coding",
+"agents",
+"function-calling"
+]
+},
+"openai__gpt-3.5-turbo-0125": {
+"id": "openai__gpt-3.5-turbo-0125",
+"modelId": "gpt-3.5-turbo-0125",
+"integrationName": "openai",
+"label": "GPT-3.5 Turbo",
+"inputCostPer1MTokens": 0.5,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 1.5,
+"outputMaxTokens": 4096,
+"description": "GPT-3.5 Turbo can understand and generate natural language or code and has been optimized for chat but works well for non-chat tasks as well.",
+"tags": [
+"deprecated",
+"general-purpose",
+"low-cost"
+]
+},
+"groq__deepseek-r1-distill-llama-70b": {
+"id": "groq__deepseek-r1-distill-llama-70b",
+"modelId": "deepseek-r1-distill-llama-70b",
+"integrationName": "groq",
+"label": "DeepSeek R1-Distill Llama 3.3 70B (Preview)",
+"inputCostPer1MTokens": 0.75,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.99,
+"outputMaxTokens": 32768,
+"description": "A fine-tuned version of Llama 3.3 70B using samples generated by DeepSeek-R1, making it smarter than the original Llama 70B, particularly for tasks requiring mathematical and factual precision.",
+"tags": [
+"general-purpose",
+"reasoning",
+"preview"
+]
+},
+"groq__llama-3.3-70b-versatile": {
+"id": "groq__llama-3.3-70b-versatile",
+"modelId": "llama-3.3-70b-versatile",
+"integrationName": "groq",
+"label": "LLaMA 3.3 70B",
+"inputCostPer1MTokens": 0.59,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.79,
+"outputMaxTokens": 32768,
+"description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.",
+"tags": [
+"recommended",
+"general-purpose",
+"coding"
+]
+},
+"groq__llama-3.2-1b-preview": {
+"id": "groq__llama-3.2-1b-preview",
+"modelId": "llama-3.2-1b-preview",
+"integrationName": "groq",
+"label": "LLaMA 3.2 1B (Preview)",
+"inputCostPer1MTokens": 0.04,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.04,
+"outputMaxTokens": 8192,
+"description": "The Llama 3.2 instruction-tuned, text-only models are optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks.",
+"tags": [
+"low-cost",
+"preview"
+]
+},
+"groq__llama-3.2-3b-preview": {
+"id": "groq__llama-3.2-3b-preview",
+"modelId": "llama-3.2-3b-preview",
+"integrationName": "groq",
+"label": "LLaMA 3.2 3B (Preview)",
+"inputCostPer1MTokens": 0.06,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.06,
+"outputMaxTokens": 8192,
+"description": "The Llama 3.2 instruction-tuned, text-only models are optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks.",
+"tags": [
+"low-cost",
+"general-purpose",
+"preview"
+]
+},
+"groq__llama-3.2-11b-vision-preview": {
+"id": "groq__llama-3.2-11b-vision-preview",
+"modelId": "llama-3.2-11b-vision-preview",
+"integrationName": "groq",
+"label": "LLaMA 3.2 11B Vision (Preview)",
+"inputCostPer1MTokens": 0.18,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.18,
+"outputMaxTokens": 8192,
+"description": "The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image.",
+"tags": [
+"low-cost",
+"vision",
+"general-purpose",
+"preview"
+]
+},
+"groq__llama-3.2-90b-vision-preview": {
+"id": "groq__llama-3.2-90b-vision-preview",
+"modelId": "llama-3.2-90b-vision-preview",
+"integrationName": "groq",
+"label": "LLaMA 3.2 90B Vision (Preview)",
+"inputCostPer1MTokens": 0.9,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.9,
+"outputMaxTokens": 8192,
+"description": "The Llama 3.2-Vision instruction-tuned models are optimized for visual recognition, image reasoning, captioning, and answering general questions about an image.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose"
+]
+},
+"groq__llama-3.1-8b-instant": {
+"id": "groq__llama-3.1-8b-instant",
+"modelId": "llama-3.1-8b-instant",
+"integrationName": "groq",
+"label": "LLaMA 3.1 8B",
+"inputCostPer1MTokens": 0.05,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.08,
+"outputMaxTokens": 8192,
+"description": "The Llama 3.1 instruction-tuned, text-only models are optimized for multilingual dialogue use cases.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"groq__llama3-8b-8192": {
+"id": "groq__llama3-8b-8192",
+"modelId": "llama3-8b-8192",
+"integrationName": "groq",
+"label": "LLaMA 3 8B",
+"inputCostPer1MTokens": 0.05,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.08,
+"outputMaxTokens": 8192,
+"description": "Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks.",
+"tags": [
+"low-cost",
+"general-purpose",
+"deprecated"
+]
+},
+"groq__llama3-70b-8192": {
+"id": "groq__llama3-70b-8192",
+"modelId": "llama3-70b-8192",
+"integrationName": "groq",
+"label": "LLaMA 3 70B",
+"inputCostPer1MTokens": 0.59,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.79,
+"outputMaxTokens": 8192,
+"description": "Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8 and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks.",
+"tags": [
+"general-purpose"
+]
+},
+"groq__gemma2-9b-it": {
+"id": "groq__gemma2-9b-it",
+"modelId": "gemma2-9b-it",
+"integrationName": "groq",
+"label": "Gemma2 9B",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 8192,
+"description": "Redesigned for outsized performance and unmatched efficiency, Gemma 2 optimizes for blazing-fast inference on diverse hardware. Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants. Gemma models are well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"anthropic__claude-3-7-sonnet-20250219": {
+"id": "anthropic__claude-3-7-sonnet-20250219",
+"modelId": "claude-3-7-sonnet-20250219",
+"integrationName": "anthropic",
+"label": "Claude 3.7 Sonnet (Standard Mode)",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 15,
+"outputMaxTokens": 8192,
+"description": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose",
+"agents",
+"coding",
+"function-calling",
+"storytelling"
+]
+},
+"anthropic__claude-3-7-sonnet-reasoning-20250219": {
+"id": "anthropic__claude-3-7-sonnet-reasoning-20250219",
+"modelId": "claude-3-7-sonnet-reasoning-20250219",
+"integrationName": "anthropic",
+"label": "Claude 3.7 Sonnet (Reasoning Mode)",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 15,
+"outputMaxTokens": 8192,
+"description": "This model uses the "Extended Thinking" mode of Claude 3.7 Sonnet and will use a significantly higher amount of output tokens than the Standard Mode, so this model should only be used for tasks that actually require it.\n\nClaude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes.",
+"tags": [
+"recommended",
+"vision",
+"general-purpose",
+"agents",
+"coding",
+"function-calling",
+"storytelling"
+]
+},
+"anthropic__claude-3-5-haiku-20241022": {
+"id": "anthropic__claude-3-5-haiku-20241022",
+"modelId": "claude-3-5-haiku-20241022",
+"integrationName": "anthropic",
+"label": "Claude 3.5 Haiku",
+"inputCostPer1MTokens": 0.8,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 4,
+"outputMaxTokens": 8192,
+"description": "Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic tasks such as chat interactions and immediate coding suggestions. This makes it highly suitable for environments that demand both speed and precision, such as software development, customer service bots, and data management systems.",
+"tags": [
+"general-purpose"
+]
+},
+"anthropic__claude-3-5-sonnet-20241022": {
+"id": "anthropic__claude-3-5-sonnet-20241022",
+"modelId": "claude-3-5-sonnet-20241022",
+"integrationName": "anthropic",
+"label": "Claude 3.5 Sonnet (October 2024)",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 15,
+"outputMaxTokens": 8192,
+"description": "Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at coding, data science, visual processing, and agentic tasks.",
+"tags": [
+"vision",
+"general-purpose",
+"agents",
+"coding",
+"function-calling",
+"storytelling"
+]
+},
+"anthropic__claude-3-5-sonnet-20240620": {
+"id": "anthropic__claude-3-5-sonnet-20240620",
+"modelId": "claude-3-5-sonnet-20240620",
+"integrationName": "anthropic",
+"label": "Claude 3.5 Sonnet (June 2024)",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 15,
+"outputMaxTokens": 4096,
+"description": "Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at coding, data science, visual processing, and agentic tasks.",
+"tags": [
+"vision",
+"general-purpose",
+"agents",
+"coding",
+"function-calling",
+"storytelling"
+]
+},
+"anthropic__claude-3-haiku-20240307": {
+"id": "anthropic__claude-3-haiku-20240307",
+"modelId": "claude-3-haiku-20240307",
+"integrationName": "anthropic",
+"label": "Claude 3 Haiku",
+"inputCostPer1MTokens": 0.25,
+"inputMaxTokens": 200000,
+"outputCostPer1MTokens": 1.25,
+"outputMaxTokens": 4096,
+"description": "Claude 3 Haiku is Anthropic's fastest and most compact model for near-instant responsiveness. Quick and accurate targeted performance.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/deepseek-r1": {
+"id": "fireworks-ai__accounts/fireworks/models/deepseek-r1",
+"modelId": "accounts/fireworks/models/deepseek-r1",
+"integrationName": "fireworks-ai",
+"label": "DeepSeek R1 (Fast)",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 8,
+"outputMaxTokens": 32768,
+"description": "This version of the R1 model has a perfect balance between speed and cost-efficiency for real-time interactive experiences, with speeds up to 90 tokens per second.\n\nDeepSeek-R1 is a state-of-the-art large language model optimized with reinforcement learning and cold-start data for exceptional reasoning, math, and code performance. Note: This model will always use a temperature of 0.6 as recommended by DeepSeek.",
+"tags": [
+"recommended",
+"reasoning",
+"general-purpose",
+"coding"
+]
+},
+"fireworks-ai__accounts/fireworks/models/deepseek-r1-basic": {
+"id": "fireworks-ai__accounts/fireworks/models/deepseek-r1-basic",
+"modelId": "accounts/fireworks/models/deepseek-r1-basic",
+"integrationName": "fireworks-ai",
+"label": "DeepSeek R1 (Basic)",
+"inputCostPer1MTokens": 0.55,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 2.19,
+"outputMaxTokens": 32768,
+"description": "This version of the R1 model is optimized for throughput and cost-effectiveness and has a lower cost but slightly higher latency than the "Fast" version of the model.\n\nDeepSeek-R1 is a state-of-the-art large language model optimized with reinforcement learning and cold-start data for exceptional reasoning, math, and code performance. Note: This model will always use a temperature of 0.6 as recommended by DeepSeek.",
+"tags": [
+"recommended",
+"reasoning",
+"general-purpose",
+"coding"
+]
+},
+"fireworks-ai__accounts/fireworks/models/deepseek-v3": {
+"id": "fireworks-ai__accounts/fireworks/models/deepseek-v3",
+"modelId": "accounts/fireworks/models/deepseek-v3",
+"integrationName": "fireworks-ai",
+"label": "DeepSeek V3",
+"inputCostPer1MTokens": 0.9,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.9,
+"outputMaxTokens": 8000,
+"description": "A a strong Mixture-of-Experts (MoE) language model with 671B total parameters with 37B activated for each token from Deepseek.",
+"tags": [
+"general-purpose",
+"coding"
+]
+},
+"fireworks-ai__accounts/fireworks/models/llama-v3p1-405b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/llama-v3p1-405b-instruct",
+"modelId": "accounts/fireworks/models/llama-v3p1-405b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Llama 3.1 405B Instruct",
+"inputCostPer1MTokens": 3,
+"inputMaxTokens": 131072,
+"outputCostPer1MTokens": 3,
+"outputMaxTokens": 131072,
+"description": "The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models in 8B, 70B and 405B sizes. The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+"tags": [
+"recommended",
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/llama-v3p1-70b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/llama-v3p1-70b-instruct",
+"modelId": "accounts/fireworks/models/llama-v3p1-70b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Llama 3.1 70B Instruct",
+"inputCostPer1MTokens": 0.9,
+"inputMaxTokens": 131072,
+"outputCostPer1MTokens": 0.9,
+"outputMaxTokens": 131072,
+"description": "The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models in 8B, 70B and 405B sizes. The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+"tags": [
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/llama-v3p1-8b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/llama-v3p1-8b-instruct",
+"modelId": "accounts/fireworks/models/llama-v3p1-8b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Llama 3.1 8B Instruct",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 131072,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 131072,
+"description": "The Meta Llama 3.1 collection of multilingual large language models (LLMs) is a collection of pretrained and instruction tuned generative models in 8B, 70B and 405B sizes. The Llama 3.1 instruction tuned text only models (8B, 70B, 405B) are optimized for multilingual dialogue use cases and outperform many of the available open source and closed chat models on common industry benchmarks.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/mixtral-8x22b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/mixtral-8x22b-instruct",
+"modelId": "accounts/fireworks/models/mixtral-8x22b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Mixtral MoE 8x22B Instruct",
+"inputCostPer1MTokens": 1.2,
+"inputMaxTokens": 65536,
+"outputCostPer1MTokens": 1.2,
+"outputMaxTokens": 65536,
+"description": "Mistral MoE 8x22B Instruct v0.1 model with Sparse Mixture of Experts. Fine tuned for instruction following.",
+"tags": [
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/mixtral-8x7b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/mixtral-8x7b-instruct",
+"modelId": "accounts/fireworks/models/mixtral-8x7b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Mixtral MoE 8x7B Instruct",
+"inputCostPer1MTokens": 0.5,
+"inputMaxTokens": 32768,
+"outputCostPer1MTokens": 0.5,
+"outputMaxTokens": 32768,
+"description": "Mistral MoE 8x7B Instruct v0.1 model with Sparse Mixture of Experts. Fine tuned for instruction following",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"fireworks-ai__accounts/fireworks/models/firefunction-v2": {
+"id": "fireworks-ai__accounts/fireworks/models/firefunction-v2",
+"modelId": "accounts/fireworks/models/firefunction-v2",
+"integrationName": "fireworks-ai",
+"label": "Firefunction V2",
+"inputCostPer1MTokens": 0.9,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.9,
+"outputMaxTokens": 8192,
+"description": "Fireworks' latest and most performant function-calling model. Firefunction-v2 is based on Llama-3 and trained to excel at function-calling as well as chat and instruction-following.",
+"tags": [
+"function-calling"
+]
+},
+"fireworks-ai__accounts/fireworks/models/firellava-13b": {
+"id": "fireworks-ai__accounts/fireworks/models/firellava-13b",
+"modelId": "accounts/fireworks/models/firellava-13b",
+"integrationName": "fireworks-ai",
+"label": "FireLLaVA-13B",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 4096,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 4096,
+"description": "Vision-language model allowing both image and text as inputs (single image is recommended), trained on OSS model generated training data.",
+"tags": [
+"low-cost",
+"vision"
+]
+},
+"fireworks-ai__accounts/fireworks/models/deepseek-coder-v2-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/deepseek-coder-v2-instruct",
+"modelId": "accounts/fireworks/models/deepseek-coder-v2-instruct",
+"integrationName": "fireworks-ai",
+"label": "DeepSeek Coder V2 Instruct",
+"inputCostPer1MTokens": 2.7,
+"inputMaxTokens": 131072,
+"outputCostPer1MTokens": 2.7,
+"outputMaxTokens": 131072,
+"description": "An open-source Mixture-of-Experts (MoE) code language model that achieves performance comparable to GPT4-Turbo in code-specific tasks from Deepseek.",
+"tags": [
+"coding"
+]
+},
+"fireworks-ai__accounts/fireworks/models/deepseek-coder-v2-lite-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/deepseek-coder-v2-lite-instruct",
+"modelId": "accounts/fireworks/models/deepseek-coder-v2-lite-instruct",
+"integrationName": "fireworks-ai",
+"label": "DeepSeek Coder V2 Lite",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 163840,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 163840,
+"description": "DeepSeek-Coder-V2, an open-source Mixture-of-Experts (MoE) code language model that achieves performance comparable to GPT4-Turbo in code-specific tasks.",
+"tags": [
+"low-cost",
+"coding"
+]
+},
+"fireworks-ai__accounts/fireworks/models/mythomax-l2-13b": {
+"id": "fireworks-ai__accounts/fireworks/models/mythomax-l2-13b",
+"modelId": "accounts/fireworks/models/mythomax-l2-13b",
+"integrationName": "fireworks-ai",
+"label": "MythoMax L2 13b",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 4096,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 4096,
+"description": "MythoMax L2 is designed to excel at both roleplaying and storytelling, and is an improved variant of the previous MythoMix model, combining the MythoLogic-L2 and Huginn models.",
+"tags": [
+"roleplay",
+"storytelling",
+"low-cost"
+]
+},
+"fireworks-ai__accounts/fireworks/models/qwen2-72b-instruct": {
+"id": "fireworks-ai__accounts/fireworks/models/qwen2-72b-instruct",
+"modelId": "accounts/fireworks/models/qwen2-72b-instruct",
+"integrationName": "fireworks-ai",
+"label": "Qwen2 72b Instruct",
+"inputCostPer1MTokens": 0.9,
+"inputMaxTokens": 32768,
+"outputCostPer1MTokens": 0.9,
+"outputMaxTokens": 32768,
+"description": "Qwen 2 is the latest large language model series developed by the Qwen team at Alibaba Cloud. Key features and capabilities of Qwen 2 include multilingual proficiency with a particular strength in Asian languages, and enhanced performance in coding, mathematics, and long context understanding",
+"tags": [
+"general-purpose",
+"function-calling"
+]
+},
+"fireworks-ai__accounts/fireworks/models/gemma2-9b-it": {
+"id": "fireworks-ai__accounts/fireworks/models/gemma2-9b-it",
+"modelId": "accounts/fireworks/models/gemma2-9b-it",
+"integrationName": "fireworks-ai",
+"label": "Gemma 2 9B Instruct",
+"inputCostPer1MTokens": 0.2,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.2,
+"outputMaxTokens": 8192,
+"description": "Redesigned for outsized performance and unmatched efficiency, Gemma 2 optimizes for blazing-fast inference on diverse hardware. Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants. Gemma models are well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"cerebras__llama3.1-8b": {
+"id": "cerebras__llama3.1-8b",
+"modelId": "llama3.1-8b",
+"integrationName": "cerebras",
+"label": "Llama 3.1 8B",
+"inputCostPer1MTokens": 0.1,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 0.1,
+"outputMaxTokens": 8192,
+"description": "Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8B and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks.",
+"tags": [
+"low-cost",
+"general-purpose"
+]
+},
+"cerebras__llama3.3-70b": {
+"id": "cerebras__llama3.3-70b",
+"modelId": "llama3.3-70b",
+"integrationName": "cerebras",
+"label": "Llama 3.3 70B",
+"inputCostPer1MTokens": 0.85,
+"inputMaxTokens": 8192,
+"outputCostPer1MTokens": 1.2,
+"outputMaxTokens": 8192,
+"description": "Meta developed and released the Meta Llama 3 family of large language models (LLMs), a collection of pretrained and instruction tuned generative text models in 8B and 70B sizes. The Llama 3 instruction tuned models are optimized for dialogue use cases and outperform many of the available open source chat models on common industry benchmarks.",
+"tags": [
+"general-purpose"
+]
+},
+"google-ai__models/gemini-2.0-flash": {
+"id": "google-ai__models/gemini-2.0-flash",
+"modelId": "models/gemini-2.0-flash",
+"integrationName": "google-ai",
+"label": "Gemini 2.0 Flash",
+"inputCostPer1MTokens": 0.1,
+"inputMaxTokens": 1048576,
+"outputCostPer1MTokens": 0.4,
+"outputMaxTokens": 8192,
+"description": "Gemini 2.0 Flash delivers next-gen features and improved capabilities, including superior speed, native tool use, multimodal generation, and a 1M token context window.",
+"tags": [
+"recommended",
+"low-cost",
+"general-purpose",
+"vision"
+]
+},
+"google-ai__models/gemini-1.5-flash-8b-001": {
+"id": "google-ai__models/gemini-1.5-flash-8b-001",
+"modelId": "models/gemini-1.5-flash-8b-001",
+"integrationName": "google-ai",
+"label": "Gemini 1.5 Flash-8B",
+"inputCostPer1MTokens": 0.0375,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.15,
+"outputMaxTokens": 128000,
+"description": "A small model designed for lower intelligence tasks. Google AI's fastest and most cost-efficient model with great performance for high-frequency tasks.",
+"tags": [
+"low-cost",
+"general-purpose",
+"vision"
+]
+},
+"google-ai__models/gemini-1.5-flash-002": {
+"id": "google-ai__models/gemini-1.5-flash-002",
+"modelId": "models/gemini-1.5-flash-002",
+"integrationName": "google-ai",
+"label": "Gemini 1.5 Flash",
+"inputCostPer1MTokens": 0.075,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 0.3,
+"outputMaxTokens": 128000,
+"description": "A fast and versatile model for scaling across diverse tasks. Google AI's most balanced multimodal model with great performance for most tasks.",
+"tags": [
+"recommended",
+"general-purpose",
+"vision"
+]
+},
+"google-ai__models/gemini-1.5-pro-002": {
+"id": "google-ai__models/gemini-1.5-pro-002",
+"modelId": "models/gemini-1.5-pro-002",
+"integrationName": "google-ai",
+"label": "Gemini 1.5 Pro",
+"inputCostPer1MTokens": 1.25,
+"inputMaxTokens": 128000,
+"outputCostPer1MTokens": 5,
+"outputMaxTokens": 128000,
+"description": "A mid-size multimodal model that is optimized for a wide-range of reasoning tasks. Google AI's best-performing model with features for a wide variety of reasoning tasks.",
+"tags": [
+"recommended",
+"general-purpose",
+"vision"
+]
+}
+},
+"model": "openai__gpt-4.1-2025-04-14",
+"transcript": [
+{
+"role": "user",
+"name": "user",
+"content": "Hi!"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "I've detected your language code as """
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Is this the preferred language for our interaction?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Yes"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "{"type":"image","imageUrl":"https://files.bpcontent.cloud/2025/04/17/15/20250417150044-WCU0M3K5.webp","title":"highly.webp","fileId":"file_01JS248FA7TW0B587RHZ8TFGJT"}"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Hey there ! \n\n\nMy name is Highly and I am HighLevel's experimental AI Support Assistant!"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "If at any time you'd like to speak to a Human Agent simply say Agent and I will transfer you to one."
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Just pick a category below that best describes your request, and I’ll take it from there."
+},
+{
+"role": "user",
+"name": "user",
+"content": "Technical Support"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Awesome! I can definitely help you with support."
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "What would you like to do?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Start Chat Support"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Hello! 🙂 How can I help you today?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Where do I find workflows"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "To find and manage workflows in HighLevel, follow these steps: \n \n1. Go to the Automations tab in your HighLevel dashboard. \n2. Click on "Workflows" to view all your existing workflows. \n3. To create a new workflow, click the "+ Create Workflow" button and choose to start from scratch or use a template. \n \nYou can also use advanced filters and Smart Lists to organize and quickly access your workflows. \n \nWould you like a step-by-step guide with screenshots, or do you have a specific workflow question? 🙂"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Question: \n\nStored Answer: undefined"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "I'm still learning! Did this help?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "👍"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other part of HighLevel?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Ask another question"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Of course! What would you like to ask next? 💡🤔"
+},
+{
+"role": "user",
+"name": "user",
+"content": "I am a plumber what should I do"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Just to clarify, are you looking for guidance on how to use HighLevel as a plumber for your business, set up specific services, or something else? 💡🤔 \nLet me know a bit more about what you're hoping to accomplish so I can provide the most helpful steps!"
+},
+{
+"role": "user",
+"name": "user",
+"content": "I want to setup for my business"
+}
+],
+"metadata": {}
+},
+"transcript": [
+{
+"role": "user",
+"name": "user",
+"content": "Hi!"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "I've detected your language code as """
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Is this the preferred language for our interaction?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Yes"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "{"type":"image","imageUrl":"https://files.bpcontent.cloud/2025/04/17/15/20250417150044-WCU0M3K5.webp","title":"highly.webp","fileId":"file_01JS248FA7TW0B587RHZ8TFGJT"}"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Hey there ! \n\n\nMy name is Highly and I am HighLevel's experimental AI Support Assistant!"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "If at any time you'd like to speak to a Human Agent simply say Agent and I will transfer you to one."
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Just pick a category below that best describes your request, and I’ll take it from there."
+},
+{
+"role": "user",
+"name": "user",
+"content": "Technical Support"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Awesome! I can definitely help you with support."
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "What would you like to do?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Start Chat Support"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Hello! 🙂 How can I help you today?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Where do I find workflows"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "To find and manage workflows in HighLevel, follow these steps: \n \n1. Go to the Automations tab in your HighLevel dashboard. \n2. Click on "Workflows" to view all your existing workflows. \n3. To create a new workflow, click the "+ Create Workflow" button and choose to start from scratch or use a template. \n \nYou can also use advanced filters and Smart Lists to organize and quickly access your workflows. \n \nWould you like a step-by-step guide with screenshots, or do you have a specific workflow question? 🙂"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Question: \n\nStored Answer: undefined"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "I'm still learning! Did this help?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "👍"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Thank you for your feedback! ✅🙂 \nIs there anything else I can help you with regarding workflows or any other part of HighLevel?"
+},
+{
+"role": "user",
+"name": "user",
+"content": "Ask another question"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Of course! What would you like to ask next? 💡🤔"
+},
+{
+"role": "user",
+"name": "user",
+"content": "I am a plumber what should I do"
+},
+{
+"role": "assistant",
+"name": "bot",
+"content": "Just to clarify, are you looking for guidance on how to use HighLevel as a plumber for your business, set up specific services, or something else? 💡🤔 \nLet me know a bit more about what you're hoping to accomplish so I can provide the most helpful steps!"
+},
+{
+"role": "user",
+"name": "user",
+"content": "I want to setup for my business"
+}
+],
+"partialExecutionMessages": [],
+"tool_names": [
+{
+"object": "clock",
+"name": "delay"
+},
+{
+"object": "clock",
+"name": "setReminder"
+},
+{
+"object": "plusmixpanel",
+"name": "trackEvent"
+},
+{
+"name": "mainRouter"
+},
+{
+"name": "askForFeedback"
+},
+{
+"name": "speakToAgent"
+},
+{
+"name": "search"
+},
+{
+"name": "Message"
+}
+],
+"iteration": 0,
+"iterations": [],
+"injectedVariables": {
+"mixpanelEvent": {}
+},
+"version": {
+"version": "01-Oct-2024",
+"status": "stable",
+"description": "This version improves the generation of messages.",
+"displayName": "October 2024"
+},
+"metadata": {},
+"location": {
+"type": "workflow",
+"workflowId": "wf-bdd7c3cd5a",
+"workflowName": "supportv3",
+"nodeId": "nd-44b307582f",
+"nodeName": "Support_Agent"
+}
+}
